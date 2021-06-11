@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Targeting">
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Sufficit.AsteriskManager</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Sufficit Versioning">
+    <VersionSuffix>1.$([System.DateTime]::UtcNow.ToString(yy)).$([System.DateTime]::UtcNow.ToString(MMdd)).$([System.DateTime]::UtcNow.ToString(mmff))</VersionSuffix>
+    <AssemblyVersion Condition=" '$(VersionSuffix)' == '' ">1.0.0.0</AssemblyVersion>
+    <AssemblyVersion Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</AssemblyVersion>
+    <Version Condition=" '$(VersionSuffix)' == '' ">0.0.1.0</Version>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Sufficit Product General">
+    <Company>SUFFICIT SOLUÇÕES EM TECNOLOGIA DA INFORMAÇÃO</Company>
+    <Authors>Sufficit</Authors>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ProductName>Sufficit Asterisk Manager Core</ProductName>
+    <AssemblyName>SufficitAsteriskManagerCore</AssemblyName>
+
+    <!-- Copia todas as dlls de dependencias para o diretório de publicação dos projetos que o utilizam -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PreserveCompilationReferences>false</PreserveCompilationReferences>
+
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  
+  <PropertyGroup Label="Sufficit Pacote NUGET">
+    <Name>Sufficit.AsteriskManager</Name>
+    <PackageId>Sufficit.AsteriskManager.Core</PackageId>
+    <PackageDescription></PackageDescription>
+    <RepositoryUrl>https://github.com/sufficit/sufficit-asteriskmanager-core</RepositoryUrl>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
+  <ItemGroup Label="Sufficit Dependencies">
+    <PackageReference Include="Sufficit.AsterNET.Core" Version="1.*" />
+  </ItemGroup>
+  
+</Project>
