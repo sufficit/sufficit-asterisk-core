@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JWODGAOe7pjZ2hvgQ8CBuRsxCZbKGbCeDZ3ok7kue61DSyJFatbNBuYpCl5m+HKcLhhZrHRm3a72OtVL3XhjdA==",
+  "success": true,
+  "projectFilePath": "Z:\\Desenvolvimento\\sufficit-asteriskmanager-core\\SufficitAsteriskManagerCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hugod\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\hugod\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
