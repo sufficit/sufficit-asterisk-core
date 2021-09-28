@@ -12,11 +12,11 @@ namespace Sufficit.AsteriskManager.Configuration
         /// </summary>
         public bool Enabled { get; set; } = true;
 
-        public string Title { get; set; }
+        public string Title { get; set; } = "Untitled";
 
         public string Address { get; set; }
 
-        public int Port { get; set; }
+        public int Port { get; set; } = 4573;
 
         public string User { get; set; }
 
