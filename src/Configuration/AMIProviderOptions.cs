@@ -8,6 +8,11 @@ namespace Sufficit.AsteriskManager.Configuration
     public class AMIProviderOptions
     {
         /// <summary>
+        /// Title of default configuration section (appsettings.json)
+        /// </summary>
+        public const string SECTIONNAME = "AMIProviderOptions";
+
+        /// <summary>
         /// Indica se o provedor de serviços está ativo e deve ser utilizado
         /// </summary>
         public bool Enabled { get; set; } = true;
