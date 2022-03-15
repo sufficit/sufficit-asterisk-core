@@ -7,13 +7,14 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        dotnet-versions: [ '2.2.x', '6.0.x' ]
+        
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Environment
       uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '2.2.x'
         
     - name: Install dependencies
       working-directory: ./src

@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup Label="Targeting">
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Sufficit.AsteriskManager</RootNamespace>
+	  <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+    <RootNamespace>Sufficit.Asterisk.Manager</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Label="Sufficit Versioning">
@@ -18,7 +18,7 @@
     <Authors>Sufficit</Authors>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ProductName>Sufficit Asterisk Manager Core</ProductName>
-    <AssemblyName>SufficitAsteriskManagerCore</AssemblyName>
+    <AssemblyName>Sufficit.Asterisk.Manager.Core</AssemblyName>
 
     <!-- Copia todas as dlls de dependencias para o diretório de publicação dos projetos que o utilizam -->
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
@@ -35,8 +35,8 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
   
-  <ItemGroup Label="Sufficit Dependencies">
-    <PackageReference Include="Sufficit.AsterNET.Core" Version="1.*" />
+  <ItemGroup>
+	<PackageReference Include="Sufficit.AsterNET.Core" Version="1.22.*" />
   </ItemGroup>
-  
+    
 </Project>
