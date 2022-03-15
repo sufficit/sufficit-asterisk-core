@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup Label="Targeting">
-	  <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+	<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <RootNamespace>Sufficit.Asterisk.Manager</RootNamespace>
   </PropertyGroup>
 
@@ -28,11 +28,15 @@
   </PropertyGroup>
   
   <PropertyGroup Label="Sufficit Pacote NUGET">
-    <Name>Sufficit.AsteriskManager</Name>
-    <PackageId>Sufficit.AsteriskManager.Core</PackageId>
+    <Name>Sufficit.Asterisk.Manager</Name>
+    <PackageId>Sufficit.Asterisk.Manager.Core</PackageId>
     <PackageDescription></PackageDescription>
-    <RepositoryUrl>https://github.com/sufficit/sufficit-asteriskmanager-core</RepositoryUrl>
+    <RepositoryUrl>https://github.com/sufficit/sufficit-asterisk-manager-core</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/sufficit/sufficit-ddictionary</PackageProjectUrl>
+	<PackageIconUrl>https://raw.githubusercontent.com/sufficit/sufficit-asterisk-manager-core/master/icon.ico</PackageIconUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  
+	<PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
   
   <ItemGroup>
