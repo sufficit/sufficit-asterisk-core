@@ -36,7 +36,9 @@
 	<PackageIconUrl>https://raw.githubusercontent.com/sufficit/sufficit-asterisk-manager-core/main/icon.ico</PackageIconUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   
-	<PackageIcon>icon.png</PackageIcon>
+	<PackageLicenseFile>license</PackageLicenseFile>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
 	<ItemGroup>
