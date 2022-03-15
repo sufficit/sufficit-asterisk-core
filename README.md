@@ -1,1 +1,1 @@
-"# sufficit-asteriskmanager-core" 
+"# sufficit-asterisk-manager-core" 

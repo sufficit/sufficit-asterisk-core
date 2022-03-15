@@ -32,13 +32,28 @@
     <PackageId>Sufficit.Asterisk.Manager.Core</PackageId>
     <PackageDescription></PackageDescription>
     <RepositoryUrl>https://github.com/sufficit/sufficit-asterisk-manager-core</RepositoryUrl>
-	<PackageProjectUrl>https://github.com/sufficit/sufficit-ddictionary</PackageProjectUrl>
-	<PackageIconUrl>https://raw.githubusercontent.com/sufficit/sufficit-asterisk-manager-core/master/icon.ico</PackageIconUrl>
+	<PackageProjectUrl>https://github.com/sufficit/sufficit-asterisk-manager-core</PackageProjectUrl>
+	<PackageIconUrl>https://raw.githubusercontent.com/sufficit/sufficit-asterisk-manager-core/main/icon.ico</PackageIconUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   
 	<PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
-  
+
+	<ItemGroup>
+		<None Include="../icon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="../license">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="../readme.md">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+	
   <ItemGroup>
 	<PackageReference Include="Sufficit.AsterNET.Core" Version="1.22.*" />
   </ItemGroup>
