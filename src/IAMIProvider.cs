@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sufficit.AsteriskManager
+namespace Sufficit.Asterisk.Manager
 {
     public interface IAMIProvider
     {

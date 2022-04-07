@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sufficit.AsteriskManager.Events
+namespace Sufficit.Asterisk.Manager.Events
 {
     public class AMIQueueParamsEvent
     {

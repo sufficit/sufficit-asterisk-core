@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sufficit.AsteriskManager.Configuration
+namespace Sufficit.Asterisk.Manager.Configuration
 {
     /// <summary>
     /// Parametros de configuração para Asterisk Manager Interface

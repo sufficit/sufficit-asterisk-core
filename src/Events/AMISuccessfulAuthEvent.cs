@@ -1,7 +1,7 @@
 ﻿using AsterNET.Manager;
 using AsterNET.Manager.Event;
 
-namespace Sufficit.AsteriskManager.Events
+namespace Sufficit.Asterisk.Manager.Events
 {
     public class AMISuccessfulAuthEvent : SuccessfulAuthEventInterface
     {
