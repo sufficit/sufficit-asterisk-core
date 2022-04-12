@@ -1,11 +1,10 @@
-﻿using AsterNET.Manager;
-using AsterNET.Manager.Event;
+﻿using Sufficit.Asterisk.Events;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
     public class AMISuccessfulAuthEvent : SuccessfulAuthEventInterface
     {
-        public SeverityEnum Severity { get; set; }
+        public Severity Severity { get; set; }
 
         public string AccountId { get; set; }
 

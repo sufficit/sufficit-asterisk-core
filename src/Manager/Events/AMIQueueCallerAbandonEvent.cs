@@ -1,4 +1,4 @@
-﻿using AsterNET.Manager.Event;
+﻿using Sufficit.Asterisk.Events;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +15,6 @@ namespace Sufficit.Asterisk.Manager.Events
 
         public string CallerIdNum { get; set; }
 
-        public string Channel { get; set; }
+        public AsteriskChannel Channel { get; set; }
     }
 }

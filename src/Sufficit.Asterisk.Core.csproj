@@ -2,7 +2,7 @@
 
   <PropertyGroup Label="Targeting">
 	<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
-    <RootNamespace>Sufficit.Asterisk.Manager</RootNamespace>
+    <RootNamespace>Sufficit.Asterisk</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Label="Sufficit Versioning">
@@ -17,8 +17,8 @@
     <Company>SUFFICIT SOLUÇÕES EM TECNOLOGIA DA INFORMAÇÃO</Company>
     <Authors>Hugo Castro de Deco</Authors>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <ProductName>Sufficit Asterisk Manager Core</ProductName>
-    <AssemblyName>Sufficit.Asterisk.Manager.Core</AssemblyName>
+    <ProductName>Sufficit Asterisk Core</ProductName>
+    <AssemblyName>Sufficit.Asterisk.Core</AssemblyName>
 
     <!-- Copia todas as dlls de dependencias para o diretório de publicação dos projetos que o utilizam -->
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
@@ -28,12 +28,12 @@
   </PropertyGroup>
   
   <PropertyGroup Label="Sufficit Pacote NUGET">
-    <Name>Sufficit.Asterisk.Manager</Name>
-    <PackageId>Sufficit.Asterisk.Manager.Core</PackageId>
+    <Name>Sufficit Asterisk Core</Name>
+    <PackageId>Sufficit.Asterisk.Core</PackageId>
     <PackageDescription></PackageDescription>
-    <RepositoryUrl>https://github.com/sufficit/sufficit-asterisk-manager-core</RepositoryUrl>
-	<PackageProjectUrl>https://github.com/sufficit/sufficit-asterisk-manager-core</PackageProjectUrl>
-	<PackageIconUrl>https://raw.githubusercontent.com/sufficit/sufficit-asterisk-manager-core/main/icon.ico</PackageIconUrl>
+    <RepositoryUrl>https://github.com/sufficit/sufficit-asterisk-core</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/sufficit/sufficit-asterisk-core</PackageProjectUrl>
+	<PackageIconUrl>https://raw.githubusercontent.com/sufficit/sufficit-asterisk-core/main/icon.ico</PackageIconUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   
 	<PackageLicenseFile>license</PackageLicenseFile>
@@ -55,9 +55,13 @@
 			<PackagePath></PackagePath>
 		</None>
 	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" Version="6.0.2" />
+	</ItemGroup>
 	
-  <ItemGroup>
-	<PackageReference Include="Sufficit.AsterNET.Core" Version="1.22.*" />
-  </ItemGroup>
-    
+	<ItemGroup Label="Sufficit Dependencies on Packing" Condition=" '$(Configuration)' == 'Packing' ">
+		<PackageReference Include="Sufficit.AsterNET.Core" Version="1.22.*" />
+	</ItemGroup>
 </Project>

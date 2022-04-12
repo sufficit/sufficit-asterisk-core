@@ -1,19 +1,21 @@
-﻿using AsterNET.Manager.Event;
+﻿using Sufficit.Asterisk.Events;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-    public class AMIPeerStatusEvent : PeerStatusEventInterface
+    public class AMIPeerStatusEvent : EventBase, PeerStatusEventInterface
     {
-        public ChannelTypeEnum ChannelType { get; set; }
+        [JsonIgnore]
+        public override string Key => "Event:PeerStatus";
+
+        public AsteriskChannelProtocol Protocol { get; set; }
 
         public string Peer { get; set; }
 
         public PeerStatusEnum PeerStatus { get; set; }
-
-        public DateTime DateReceived { get; set; }
 
         public string Address { get; set; }
 
