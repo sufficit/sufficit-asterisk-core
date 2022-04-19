@@ -11,8 +11,6 @@ namespace Sufficit.Asterisk.Manager.Events
         [JsonIgnore]
         public override string Key => "Event:PeerStatus";
 
-        public AsteriskChannelProtocol Protocol { get; set; }
-
         public string Peer { get; set; }
 
         public PeerStatusEnum PeerStatus { get; set; }

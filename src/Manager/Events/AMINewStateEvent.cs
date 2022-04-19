@@ -9,12 +9,12 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// An ExtensionStatusEvent is triggered when the state of an extension changes.<br/>
 	/// It is implemented in manager.c
 	/// </summary>
-	public class AMINewStateEvent : EventBase
+	public class AMINewStateEvent : EventBase, IChannelEvent
 	{
 		[JsonIgnore]
 		public override string Key => "Event:NewState";
 
-		public AsteriskChannel Channel { get; set; }
+		public string Channel { get; set; }
 
 		/// <summary>
 		/// Get/Set Channel State

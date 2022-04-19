@@ -28,8 +28,8 @@ namespace Sufficit.Asterisk
                     Name = track.Substring(0, separator);
                 } 
                 else 
-                { 
-                    Name = track; 
+                {
+                    Name = track;                  
                 }
             }
             else { throw new ArgumentNullException("source"); }

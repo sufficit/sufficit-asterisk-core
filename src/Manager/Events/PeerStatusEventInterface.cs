@@ -6,8 +6,6 @@ namespace Sufficit.Asterisk.Events
 {
     public interface PeerStatusEventInterface
     {
-        AsteriskChannelProtocol Protocol { get; }
-
         string Peer { get; }
 
         PeerStatusEnum PeerStatus { get; }

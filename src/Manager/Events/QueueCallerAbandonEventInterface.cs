@@ -10,6 +10,6 @@ namespace Sufficit.Asterisk.Events
         int Position { get; }
         int HoldTime { get; }
         string CallerIdNum { get; }
-        AsteriskChannel Channel { get; }
+        string Channel { get; }
     }
 }

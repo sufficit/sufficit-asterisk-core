@@ -9,12 +9,12 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// An NewChannelEvent is triggered when.<br/>
 	/// It is implemented in manager.c
 	/// </summary>
-	public class AMINewChannelEvent : EventBase
+	public class AMINewChannelEvent : EventBase, IChannelEvent
 	{
 		[JsonIgnore]
 		public override string Key => "Event:NewChannel";
 
-		public AsteriskChannel Channel { get; set; }
+		public string Channel { get; set; }
 
 		/// <summary>
 		/// Get/Set Channel State
