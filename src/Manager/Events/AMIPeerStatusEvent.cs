@@ -13,7 +13,7 @@ namespace Sufficit.Asterisk.Manager.Events
 
         public string Peer { get; set; }
 
-        public PeerStatusEnum PeerStatus { get; set; }
+        public PeerStatus PeerStatus { get; set; }
 
         public string Address { get; set; }
 

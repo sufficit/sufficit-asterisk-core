@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sufficit.Asterisk.Events
+namespace Sufficit.Asterisk
 {
-    public enum PeerStatusEnum
+    public enum PeerStatus
     {
         Unknown,
         Unregistered,
@@ -12,6 +12,8 @@ namespace Sufficit.Asterisk.Events
         Reachable,
         Unreachable,
         Rejected, // (IAX only)
-        Registered
+        Registered,
+        Unmonitored,
+        Ok
     }
 }

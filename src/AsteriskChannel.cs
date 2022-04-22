@@ -11,6 +11,13 @@ namespace Sufficit.Asterisk
         [JsonConstructor]
         public AsteriskChannel() { }
 
+        public AsteriskChannel(PeerInfo source)
+        {
+            Id = $"{source.Protocol}/{source.Name}";
+            Protocol = source.Protocol;
+            Name = source.Name;
+        }
+
         public AsteriskChannel(string source)
         {
             if (!string.IsNullOrWhiteSpace(source))

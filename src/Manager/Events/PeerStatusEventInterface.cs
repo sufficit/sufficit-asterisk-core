@@ -8,7 +8,7 @@ namespace Sufficit.Asterisk.Events
     {
         string Peer { get; }
 
-        PeerStatusEnum PeerStatus { get; }
+        PeerStatus PeerStatus { get; }
 
         DateTime DateReceived { get; }
 
