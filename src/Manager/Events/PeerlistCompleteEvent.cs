@@ -9,19 +9,11 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// <seealso cref="Manager.Action.SIPShowPeerAction"/>
 	public class PeerlistCompleteEvent : ResponseEvent
 	{
-		private int listItems;
 
 		/// <summary>
 		/// Get/Set the number of PeerEvents that have been reported.</summary>
-		public int ListItems
-		{
-			get { return listItems; }
-			set { this.listItems = value; }
-		}
+		public uint ListItems { get; set; }
 
-		public PeerlistCompleteEvent(IManagerConnection source)
-			: base(source)
-		{
-		}
+		public string EventList { get; set; }
 	}
 }

@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup Label="Targeting">
-	<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
-    <RootNamespace>Sufficit.Asterisk</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup Label="Targeting">
+		<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+		<LangVersion>9</LangVersion>
+		<RootNamespace>Sufficit.Asterisk</RootNamespace>
+	</PropertyGroup>
 
   <PropertyGroup Label="Sufficit Versioning">
     <VersionSuffix>1.$([System.DateTime]::UtcNow.ToString(yy)).$([System.DateTime]::UtcNow.ToString(MMdd)).$([System.DateTime]::UtcNow.ToString(HHmm))</VersionSuffix>
