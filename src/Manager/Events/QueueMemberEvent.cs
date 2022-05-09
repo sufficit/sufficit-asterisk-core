@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Sufficit.Asterisk.Manager.Events
@@ -7,7 +8,7 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// It is implemented in apps/app_queue.c
 	/// </summary>
 	/// <seealso cref="Manager.Action.QueueStatusAction" />
-	public class QueueMemberEvent : QueueEvent, IResponseEvent
+	public class QueueMemberEvent : QueueEvent, IResponseEvent, IQueueMemberEvent, IQueueMemberStatusEvent
 	{
         #region IMPLEMENT INTERFACE RESPONSE EVENT
         /// <summary>
@@ -23,21 +24,25 @@ namespace Sufficit.Asterisk.Manager.Events
 
 		#endregion
 
-		/// <summary>
-		/// Get/Set the name of the queue member.
-		/// </summary>
-		public string Name { get; set; }
+		public string Interface { get; set; }
+
+		public string MemberName { get; set; }
 
 		/// <summary>
 		/// Get/Set the name of the queue member.
 		/// </summary>
-		//public string MemberName { get; set; }
+		[Obsolete("before asterisk 12")]
+		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
+		public string Name { get => MemberName; set => MemberName = value; }
 
 		/// <summary>
 		/// Get/Set the name of the member's interface.<br/>
 		/// E.g. the channel name or agent group.
 		/// </summary>
-		public string Location { get; set; }
+		[Obsolete("before asterisk 12")]
+		[JsonIgnore(Condition = JsonIgnoreCondition.Always)]
+		public string Location { get => Interface; set => Interface = value; }
+
 		/// <summary>
 		/// Get/Set value if this member has been dynamically added by the QueueAdd command
 		/// (in the dialplan or via the Manager API) or if this member is has been
@@ -48,35 +53,19 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// <summary>
 		/// Get/Set the penalty for the added member. When calls are distributed members with higher penalties are considered last.
 		/// </summary>
-		public int Penalty { get; set; }
+		public uint Penalty { get; set; }
 		/// <summary>
 		/// Get/Set the number of calls answered by the member.
 		/// </summary>
-		public int CallsTaken { get; set; }
+		public uint CallsTaken { get; set; }
 		/// <summary>
 		/// Get/Set the time (in seconds since 01/01/1970) the last successful call answered by the added member was hungup.
 		/// </summary>
-		public long LastCall { get; set; }
-		/// <summary>
-		/// Get/Set the status of this queue member.<br/>
-		/// Available since Asterisk 1.2<br/>
-		/// Valid status codes are:
-		/// <dl>
-		/// <dt>AST_DEVICE_UNKNOWN (0)</dt>
-		/// <dd>Queue member is available</dd>
-		/// <dt>AST_DEVICE_NOT_INUSE (1)</dt>
-		/// <dd>?</dd>
-		/// <dt>AST_DEVICE_INUSE (2)</dt>
-		/// <dd>?</dd>
-		/// <dt>AST_DEVICE_BUSY (3)</dt>
-		/// <dd>?</dd>
-		/// <dt>AST_DEVICE_INVALID (4)</dt>
-		/// <dd>?</dd>
-		/// <dt>AST_DEVICE_UNAVAILABLE (5)</dt>
-		/// <dd>?</dd>
-		/// </dl>
-		/// </summary>
-		public int Status { get; set; }
+		public int LastCall { get; set; }
+
+		/// <see cref="IQueueMemberStatusEvent.Status" />
+		public AsteriskDeviceStatus Status { get; set; }
+
 		/// <summary>
 		/// Is this queue member paused (not accepting calls)?<br/>
 		/// Available since Asterisk 1.2.<br/>
@@ -103,5 +92,5 @@ namespace Sufficit.Asterisk.Manager.Events
 		public uint LastPause { get; set; }
 
 		public uint WrapUpTime { get; set; }
-	}
+    }
 }

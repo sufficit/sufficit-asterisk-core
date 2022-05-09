@@ -41,8 +41,5 @@ namespace Sufficit.Asterisk.Manager.Events
 		public string DestExten { get; set; }
 		public string DestPriority { get; set; }
 		public string DestLinkedId { get; set; }
-
-		public string Context { get; set; }
-		public string Priority { get; set; }
 	}
 }

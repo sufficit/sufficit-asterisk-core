@@ -12,6 +12,9 @@ namespace Sufficit.Asterisk.Manager.Events
 	{
 		public string UniqueId { get; set; }
 
+		/// <summary>
+		///  Uniqueid of the oldest channel associated with this channel.
+		/// </summary>
 		[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault)]
 		public string? LinkedId { get; set; }
 

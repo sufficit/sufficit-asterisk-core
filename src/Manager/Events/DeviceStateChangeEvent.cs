@@ -11,6 +11,6 @@ namespace Sufficit.Asterisk.Manager.Events
     {
         public string Device { get; set; }
 
-        public string State { get; set; }
+        public AsteriskDeviceStatus State { get; set; }
     }
 }

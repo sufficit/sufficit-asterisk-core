@@ -8,20 +8,8 @@ namespace Sufficit.Asterisk.Manager.Events
     ///     See http://soft-switch.org/installing-spandsp.html for details.<br />
     ///     Implemented in apps/app_rxfax.c.
     /// </summary>
-    public class FaxReceivedEvent : AbstractQueueAgentEvent
+    public class FaxReceivedEvent : AbstractChannelInfoEvent
     {
-        /// <summary>
-        ///     Get/Set the extension in Asterisk's dialplan the fax was received
-        ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
-        /// </summary>
-        public string Exten { get; set; }
-
-        /// <summary>
-        ///     Get/Set the Caller*ID of the calling party or an empty string if none is
-        ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
-        /// </summary>
-        public string CallerId { get; set; }
-
         /// <summary>
         ///     Get/Set the identifier of the remote fax station.
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.

@@ -23,21 +23,24 @@ namespace Sufficit.Asterisk
             if (!string.IsNullOrWhiteSpace(source))
             {
                 Id = source;
-                var splitted = Id.Split('/');
-                var tech = splitted[0];
-                Protocol = tech.ToAsteriskChannelProtocol();
+                if (Id.Contains("/"))
+                {
+                    var splitted = Id.Split('/');
+                    var tech = splitted[0];
+                    Protocol = tech.ToAsteriskChannelProtocol();
 
-                var track = splitted[1];
-                var separator = track.LastIndexOf('-');
-                if (separator > -1)
-                {
-                    Suffix = track.Substring(separator + 1, track.Length - (separator + 1));
-                    Name = track.Substring(0, separator);
+                    var track = splitted[1];
+                    var separator = track.LastIndexOf('-');
+                    if (separator > -1)
+                    {
+                        Suffix = track.Substring(separator + 1, track.Length - (separator + 1));
+                        Name = track.Substring(0, separator);
+                    }
+                    else
+                    {
+                        Name = track;
+                    }
                 } 
-                else 
-                {
-                    Name = track;                  
-                }
             }
             else { throw new ArgumentNullException("source"); }
         }

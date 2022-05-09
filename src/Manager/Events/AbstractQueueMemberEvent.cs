@@ -5,7 +5,7 @@ namespace Sufficit.Asterisk.Manager.Events
     /// <summary>
     ///     Abstract base class for several queue member related events.
     /// </summary>
-    public abstract class AbstractQueueMemberEvent : QueueEvent
+    public abstract class AbstractQueueMemberEvent : QueueEvent, IQueueMemberEvent, IQueueMemberStatusEvent
     {
         /// <summary>
         /// Returns the name of the member's interface.<br />
@@ -46,19 +46,19 @@ namespace Sufficit.Asterisk.Manager.Events
         /// The penalty associated with the queue member. When calls are distributed members with higher penalties are considered last.<br />
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public int Penalty { get; set; }
+        public uint Penalty { get; set; }
 
         /// <summary>
         /// The number of calls this queue member has serviced.<br />
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public int CallsTaken { get; set; }
+        public uint CallsTaken { get; set; }
 
         /// <summary>
         /// The time this member last took a call, expressed in seconds since 00:00, Jan 1, 1970 UTC.<br />
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public long LastCall { get; set; }
+        public int LastCall { get; set; }
 
         /// <summary>
         /// When queue member is paused (not accepting calls).<br/>
@@ -68,25 +68,8 @@ namespace Sufficit.Asterisk.Manager.Events
         /// </summary>
         public bool Paused { get; set; }
 
-        /// <summary>
-        /// The numeric device state status of the queue member.<br/>
-        /// <para>
-        /// Valid status codes are:<br/>
-        /// <list type="number" start="0">
-        /// <item>AST_DEVICE_UNKNOWN</item>
-        /// <item>AST_DEVICE_NOT_INUSE</item>
-        /// <item>AST_DEVICE_INUSE</item>
-        /// <item>AST_DEVICE_BUSY</item>
-        /// <item>AST_DEVICE_INVALID</item>
-        /// <item>AST_DEVICE_UNAVAILABLE</item>
-        /// <item>AST_DEVICE_RINGING</item>
-        /// <item>AST_DEVICE_RINGINUSE</item>
-        /// <item>AST_DEVICE_ONHOLD</item>
-        /// </list>
-        /// </para>
-        /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
-        /// </summary>
-        public int Status { get; set; }
+        /// <see cref="IQueueMemberStatusEvent.Status" />
+        public AsteriskDeviceStatus Status { get; set; }
 
         /// <summary>
         /// Evaluates <see langword="true"/> if Ringinuse,

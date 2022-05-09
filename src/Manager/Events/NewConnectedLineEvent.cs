@@ -8,10 +8,6 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// </summary>
 	public class NewConnectedLine : AbstractChannelInfoEvent
 	{
-		[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault)]
-		public string? Context { get; set; }
 
-		[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault)]
-		public string? Priority { get; set; }
 	}
 }

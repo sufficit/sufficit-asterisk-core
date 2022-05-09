@@ -21,10 +21,6 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// <summary>
 		/// Get/Set the unique ID of the source channel.
 		/// </summary>
-		public string SrcUniqueId { get; set; }
-		/// <summary>
-		/// Get/Set the unique ID of the distination channel.
-		/// </summary>
-		public string DestUniqueId { get; set; }		
+		public string SrcUniqueId { get; set; }		
 	}
 }

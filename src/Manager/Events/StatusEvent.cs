@@ -6,7 +6,7 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// A StatusEvent is triggered for each active channel in response to a StatusAction.
 	/// </summary>
 	/// <seealso cref="Manager.Action.StatusAction" />
-	public class StatusEvent : ResponseEvent, IChannelEvent, IManagerEvent
+	public class StatusEvent : ResponseEvent, IChannelEvent, IManagerEvent, IChannelInfoEvent
 	{
 		#region IMPLEMENT INTERFACE CHANNEL EVENT
 
@@ -56,7 +56,7 @@ namespace Sufficit.Asterisk.Manager.Events
 		public string State { get; set; }
 		public string Context { get; set; }
 		public string Extension { get; set; }
-		public int Priority { get; set; }
+		public string Priority { get; set; }
 
 		/// <summary> Returns the number of elapsed seconds.</summary>
 		/// <summary> Sets the number of elapsed seconds.</summary>

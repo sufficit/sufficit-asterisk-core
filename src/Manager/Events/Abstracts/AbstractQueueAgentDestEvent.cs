@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-    public abstract class AbstractQueueAgentDestEvent : AbstractChannelInfoEvent, IQueueAgentEvent, IDestChannelEvent
+    public abstract class AbstractQueueAgentDestEvent : AbstractChannelInfoEvent, IQueueEvent, IQueueMemberEvent, IDestChannelEvent
     {
         /// <summary>
         ///     Get/Set the name of the queue.

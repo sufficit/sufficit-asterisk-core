@@ -8,14 +8,18 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// </summary>
 	public class PeerEntryEvent : ResponseEvent, IPeerStatus
 	{
-		string IPeerStatus.Peer => $"{ChannelType.ToString().ToUpperInvariant()}/{ObjectName}";
+        #region IMPLEMENT INTERFACE PEER STATUS
+
+        string IPeerStatus.Peer => $"{ChannelType.ToString().ToUpperInvariant()}/{ObjectName}";
 
 		PeerStatus IPeerStatus.PeerStatus => this.GetPeerStatus();
 
-		/// <summary>
-		/// For SIP peers this is "SIP".
-		/// </summary>
-		public AsteriskChannelProtocol ChannelType { get; set; }
+        #endregion
+
+        /// <summary>
+        /// For SIP peers this is "SIP".
+        /// </summary>
+        public AsteriskChannelProtocol ChannelType { get; set; }
 
 		public string ObjectName { get; set; }
 

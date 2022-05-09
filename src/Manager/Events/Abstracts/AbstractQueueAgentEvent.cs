@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-    public abstract class AbstractQueueAgentEvent : AbstractChannelInfoEvent, IQueueAgentEvent
+    public abstract class AbstractQueueAgentEvent : AbstractChannelInfoEvent, IQueueEvent, IQueueMemberEvent
     {
         /// <summary>
         ///     Get/Set the name of the queue.
@@ -21,7 +21,7 @@ namespace Sufficit.Asterisk.Manager.Events
         ///     Get/Set the name of the member's interface.<br />
         ///     Removed in asterisk 12
         /// </summary>
-        public string Member { get; set; }
+        public string Member { get => MemberName; set => MemberName = value; }
 
         /// <summary>
         ///     Get/Set the name of the member's interface.

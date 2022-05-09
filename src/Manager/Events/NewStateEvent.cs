@@ -8,10 +8,6 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// </summary>
 	public class NewStateEvent : AbstractChannelInfoEvent
 	{
-		public string Language { get; set; }
-		public string Context { get; set; }
-		public string Exten { get; set; }
-		public string Priority { get; set; }
-		public string LinkedId { get; set; }
+
 	}
 }

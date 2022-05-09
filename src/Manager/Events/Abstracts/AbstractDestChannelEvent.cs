@@ -18,6 +18,10 @@ namespace Sufficit.Asterisk.Manager.Events
         public string DestContext { get; set; }
         public string DestExten { get; set; }
         public string DestPriority { get; set; }
+
+        /// <summary>
+		/// Get/Set the unique ID of the destination channel.
+		/// </summary>
         public string DestUniqueId { get; set; }
         public string DestLinkedId { get; set; }
     }
