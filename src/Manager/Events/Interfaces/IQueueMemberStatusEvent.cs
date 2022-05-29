@@ -52,6 +52,6 @@ namespace Sufficit.Asterisk.Manager.Events
         bool Paused { get; }
         bool InCall { get; }
 
-        string PausedReason { get; }
+        string? PausedReason { get; }
     }
 }

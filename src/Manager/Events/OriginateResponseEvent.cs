@@ -14,6 +14,7 @@ namespace Sufficit.Asterisk.Manager.Events
 		public string CallerIdName { get; set; }
 		public string Channel { get; set; }
 		public string UniqueId { get; set; }
+		public string LinkedId { get; set; }
 		public string Application { get; set; }
 		public string Data { get; set; }
 	}
