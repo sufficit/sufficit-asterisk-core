@@ -14,7 +14,7 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// <summary>
 		/// Get/Set the action id of the ManagerAction that caused this event.
 		/// </summary>
-		public string ActionId { get; set; }
+		public string ActionId { get; set; } = default!;
 
 		/// <summary>
 		/// Get/Set the internal action id of the ManagerAction that caused this event.

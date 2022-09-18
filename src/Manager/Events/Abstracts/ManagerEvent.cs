@@ -10,6 +10,7 @@ namespace Sufficit.Asterisk.Manager.Events
 
         /// <inheritdoc cref="IManagerEvent.Privilege"/>
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        [JsonPropertyName("privilege")]
         public Privilege Privilege { get; set; }
 
         /// <inheritdoc cref="IManagerEvent.DateReceived"/>
