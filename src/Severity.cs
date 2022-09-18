@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Sufficit.Asterisk
 {
+    [Flags]
     public enum Severity
     {
         Informational,
