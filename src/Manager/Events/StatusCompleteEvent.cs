@@ -9,7 +9,7 @@ namespace Sufficit.Asterisk.Manager.Events
     public class StatusCompleteEvent : ResponseEvent, IManagerEvent
 	{
 		public uint Items { get; set; }
-        public string EventList { get; set; }
+        public string? EventList { get; set; }
         public uint ListItems { get; set; }
 	}
 }

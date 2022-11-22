@@ -10,7 +10,7 @@ namespace Sufficit.Asterisk.Manager.Events
 	{
 		#region IMPLEMENT INTERFACE CHANNEL EVENT
 
-		public string Channel { get; set; }
+		public string Channel { get; set; } = default!;
 
 		/// <summary>
 		/// Get/Set Channel State
@@ -20,43 +20,43 @@ namespace Sufficit.Asterisk.Manager.Events
 		public string? ChannelStateDesc { get; set; }
 
 		#endregion
-		public string ConnectedLineNum { get; set; }
-		public string ConnectedLineName { get; set; }
-		public string Language { get; set; }
-		public string Exten { get; set; }
-		public string LinkedId { get; set; }
-		public string Type { get; set; }
-		public string EffectiveConnectedLineNum { get; set; }
-		public string EffectiveConnectedLineName { get; set; }
-		public string TimeToHangup { get; set; }
-		public string Application { get; set; }
-		public string Data { get; set; }
-		public string NativeFormats { get; set; }
-		public string ReadFormat { get; set; }
-		public string WriteFormat { get; set; }
-		public string CallGroup { get; set; }
-		public string PickupGroup { get; set; }
+		public string? ConnectedLineNum { get; set; }
+		public string? ConnectedLineName { get; set; }
+		public string Language { get; set; } = default!;
+		public string Exten { get; set; } = default!;
+		public string? LinkedId { get; set; }
+		public string? Type { get; set; }
+		public string? EffectiveConnectedLineNum { get; set; }
+		public string? EffectiveConnectedLineName { get; set; }
+		public string? TimeToHangup { get; set; }
+		public string? Application { get; set; }
+		public string? Data { get; set; }
+		public string? NativeFormats { get; set; }
+		public string? ReadFormat { get; set; }
+		public string? WriteFormat { get; set; }
+		public string? CallGroup { get; set; }
+		public string? PickupGroup { get; set; }
 
 		/// <summary> Returns the Caller*ID of this channel.</summary>
 		/// <summary> Sets the Caller*ID of this channel.</summary>
-		public string CallerId { get; set; }
+		public string? CallerId { get; set; }
 
 		/// <summary> Returns the Caller*ID Name of this channel.</summary>
 		/// <summary> Sets the Caller*ID Name of this channel.</summary>
-		public string CallerIdName { get; set; }
+		public string? CallerIdName { get; set; }
 
 		/// <summary> Returns the Caller*ID Number of this channel.</summary>
 		/// <summary> Sets the Caller*ID Number of this channel.</summary>
-		public string CallerIdNum { get; set; }
+		public string? CallerIdNum { get; set; }
 
 		/// <summary> Returns the account code of this channel.</summary>
 		/// <summary> Sets the account code of this channel.</summary>
-		public string Account { get; set; }
-		public string AccountCode { get; set; }
-		public string State { get; set; }
-		public string Context { get; set; }
-		public string Extension { get; set; }
-		public string Priority { get; set; }
+		public string? Account { get; set; }
+		public string? AccountCode { get; set; }
+		public string? State { get; set; }
+		public string Context { get; set; } = default!;
+		public string? Extension { get; set; }
+		public string Priority { get; set; } = default!;
 
 		/// <summary> Returns the number of elapsed seconds.</summary>
 		/// <summary> Sets the number of elapsed seconds.</summary>
@@ -64,12 +64,12 @@ namespace Sufficit.Asterisk.Manager.Events
 
 		/// <summary> Returns the name of the linked channel if this channel is bridged.</summary>
 		/// <summary> Sets the name of the linked channel.</summary>
-		public string Link { get; set; }
+		public string? Link { get; set; }
 
-		public string UniqueId { get; set; }
-		public string BridgeId { get; set; }
-		public string ReadTrans { get; set; }
-		public string WriteTrans { get; set; }
+		public string UniqueId { get; set; } = default!;
+		public string? BridgeId { get; set; }
+		public string? ReadTrans { get; set; }
+		public string? WriteTrans { get; set; }
 		public string? Dnid { get; set; }
 	}
 }

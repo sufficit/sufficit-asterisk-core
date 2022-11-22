@@ -6,37 +6,23 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// </summary>
 	public class ReloadEvent : ConnectionStateEvent
 	{
-		private string message;
-		private string module;
-		private string status;
-
 		/// <summary>Reload event status.</summary>
-		public string Status
-		{
-			get { return this.status; }
-			set { this.status = value; }
-		}
+		public string? Status { get; set; }
+
 		/// <summary> Returns
 		/// "Manager"
 		/// "Enum"
 		/// "DNSmgr"
 		/// "CDR"
 		/// </summary>
-		public string Module
-		{
-			get { return this.module; }
-			set { this.module = value; }
-		}
-		/// <summary> Returns
-		/// "Reload Requested",
-		/// "ENUM reload Requested",
-		/// "DNSmgr reload Requested",
-		/// "CDR subsystem reload requested"
-		/// .</summary>
-		public string Message
-		{
-			get { return this.message; }
-			set { this.message = value; }
-		}
-	}
+		public string? Module { get; set; }
+
+        /// <summary> Returns
+        /// "Reload Requested",
+        /// "ENUM reload Requested",
+        /// "DNSmgr reload Requested",
+        /// "CDR subsystem reload requested"
+        /// .</summary>
+        public string? Message { get; set; }
+    }
 }

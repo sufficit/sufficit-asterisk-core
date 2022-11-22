@@ -37,15 +37,6 @@ namespace Sufficit.Asterisk.Manager.Events
 		internal bool islink;
 		internal bool isunlink;
 
-		private BridgeTypes bridgeType;
-		private string response;
-		private string reason;
-		private string channel1;
-		private string channel2;
-		private string uniqueId1;
-		private string uniqueId2;
-		private string callerId1;
-		private string callerId2;
 
 		#region ParseSpecial(Dictionary<string, string> attributes)
 		/// <summary>
@@ -53,52 +44,55 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// </summary>
 		/// <param name="attributes">dictionary</param>
 		/// <returns>updated dictionary</returns>
-		public Dictionary<string, string> ParseSpecial(Dictionary<string, string> attributes)
+		public Dictionary<string, string> ParseSpecial(Dictionary<string, string>? attributes)
 		{
 			if (attributes == null)
-				return null;
+			{
+				// returning empty dictionary to avoid errors
+				return new Dictionary<string, string>();
+			}
 
-				Dictionary<string,string> updated = new Dictionary<string,string>(attributes.Count);
-				foreach(KeyValuePair<string, string> pair in attributes)
-				{
+			var updated = new Dictionary<string,string>(attributes.Count);
+			foreach(KeyValuePair<string, string> pair in attributes)
+			{
 				string value = pair.Value.ToLowerInvariant();
-					switch (pair.Key.ToLowerInvariant())
-					{
-						case "bridgestate":
-							switch(value)
-							{
-								case "link":
-									this.BridgeState = BridgeStates.BRIDGE_STATE_LINK;
-									break;
-								case "unlink":
-									this.BridgeState = BridgeStates.BRIDGE_STATE_UNLINK;
-									break;
-							}
-							break;
+				switch (pair.Key.ToLowerInvariant())
+				{
+					case "bridgestate":
+						switch(value)
+						{
+							case "link":
+								this.BridgeState = BridgeStates.BRIDGE_STATE_LINK;
+								break;
+							case "unlink":
+								this.BridgeState = BridgeStates.BRIDGE_STATE_UNLINK;
+								break;
+						}
+						break;
 
-						case "bridgetype":
-							switch (value)
-							{
-								case "rtp-native":
-									this.BridgeType = BridgeTypes.BRIDGE_TYPE_RTP_NATIVE;
-									break;
-								case "rtp-direct":
-									this.BridgeType = BridgeTypes.BRIDGE_TYPE_RTP_DIRECT;
-									break;
-								case "rtp-remote":
-									this.BridgeType = BridgeTypes.BRIDGE_TYPE_RTP_REMOTE;
-									break;
-								case "core":
-									this.BridgeType = BridgeTypes.BRIDGE_TYPE_CORE;
-									break;
-							}
-							break;
+					case "bridgetype":
+						switch (value)
+						{
+							case "rtp-native":
+								this.BridgeType = BridgeTypes.BRIDGE_TYPE_RTP_NATIVE;
+								break;
+							case "rtp-direct":
+								this.BridgeType = BridgeTypes.BRIDGE_TYPE_RTP_DIRECT;
+								break;
+							case "rtp-remote":
+								this.BridgeType = BridgeTypes.BRIDGE_TYPE_RTP_REMOTE;
+								break;
+							case "core":
+								this.BridgeType = BridgeTypes.BRIDGE_TYPE_CORE;
+								break;
+						}
+						break;
 
-						default:
-							updated.Add(pair.Key, pair.Value);
-							break;
-					}
+					default:
+						updated.Add(pair.Key, pair.Value);
+						break;
 				}
+			}
 
 			return updated;
 		}
@@ -126,66 +120,27 @@ namespace Sufficit.Asterisk.Manager.Events
 
 		public object GetSetter() => this;
 
-		public Dictionary<string, string> Attributes { get; internal set; }
+		public Dictionary<string, string>? Attributes { get; internal set; }
 
 		#endregion
 
 		#endregion
 
-		public string Response
-		{
-			get { return this.response; }
-			set { this.response = value; }
-		}
-		public string Reason
-		{
-			get { return this.reason; }
-			set { this.reason = value; }
-		}
-		/// <summary>
-		/// Link if the two channels have been linked,
-		/// Unlink if they have been unlinked.
-		/// </summary>
-		public BridgeStates BridgeState
-		{
-			get { return this.bridgeState; }
-			set { this.bridgeState = value; }
-		}
-		public BridgeTypes BridgeType
-		{
-			get { return this.bridgeType; }
-			set { this.bridgeType = value; }
-		}
-		public string Channel1
-		{
-			get { return this.channel1; }
-			set { this.channel1 = value; }
-		}
-		public string Channel2
-		{
-			get { return this.channel2; }
-			set { this.channel2 = value; }
-		}
-		public string UniqueId1
-		{
-			get { return this.uniqueId1; }
-			set { this.uniqueId1 = value; }
-		}
-		public string UniqueId2
-		{
-			get { return this.uniqueId2; }
-			set { this.uniqueId2 = value; }
-		}
-		public string CallerId1
-		{
-			get { return this.callerId1; }
-			set { this.callerId1 = value; }
-		}
-		public string CallerId2
-		{
-			get { return this.callerId2; }
-			set { this.callerId2 = value; }
-		}
+		public string? Response { get; set; }
 
+		public string? Reason { get; set; }
+
+        /// <summary>
+        /// Link if the two channels have been linked,
+        /// Unlink if they have been unlinked.
+        /// </summary>
+        public BridgeStates BridgeState { get; set; }
+        public BridgeTypes BridgeType { get; set; }
+        public string? Channel1 { get; set; }
+        public string? Channel2 { get; set; }
+        public string? UniqueId1 { get; set; }
+        public string? UniqueId2 { get; set; }
+        public string? CallerId1 { get; set; }
+        public string? CallerId2 { get; set; }
     }
 }

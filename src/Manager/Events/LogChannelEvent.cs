@@ -6,7 +6,7 @@ namespace Sufficit.Asterisk.Manager.Events
     /// </summary>
     public class LogChannelEvent : ManagerEvent
     {
-        private string reason;
+        private string? reason;
         private int reasonCode;
 
         /// <summary>
@@ -17,7 +17,7 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Get the textual representation of the reason for disabling logging.
         /// </summary>
-        public string Reason
+        public string? Reason
         {
             get { return reason; }
             set
@@ -25,16 +25,15 @@ namespace Sufficit.Asterisk.Manager.Events
                 reason = "";
                 reasonCode = 0;
 
-                if (string.IsNullOrEmpty(value))
-                    return;
-
-                int spaceIdx;
-
-                if ((spaceIdx = value.IndexOf(' ')) <= 0)
-                    spaceIdx = value.Length;
-                int.TryParse(value.Substring(0, spaceIdx), out reasonCode);
-                if (value.Length > spaceIdx + 3)
-                    reason = value.Substring(spaceIdx + 3, value.Length - spaceIdx + 3);
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    int spaceIdx;
+                    if ((spaceIdx = value!.IndexOf(' ')) <= 0)
+                        spaceIdx = value.Length;
+                    int.TryParse(value.Substring(0, spaceIdx), out reasonCode);
+                    if (value.Length > spaceIdx + 3)
+                        reason = value.Substring(spaceIdx + 3, value.Length - spaceIdx + 3);
+                }
             }
         }
 

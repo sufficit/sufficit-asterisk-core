@@ -38,20 +38,14 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// <seealso cref="Manager.ManagerConnection.RegisterUserEventClass"/>
 	public class UserEvent : ManagerEvent, IParseSupport
 	{
-		private string userEventName;
-
 		public bool Parse(string key, string value)
 		{
 			if (key == "userevent")
-				userEventName = value;
+                UserEventName = value;
 			return BaseParse(key, value);
 		}
 
-		public string UserEventName
-		{
-			get { return userEventName; }
-			set { userEventName = value; }
-		}
+		public string UserEventName { get; set; } = default!;
 
 		/// <summary>
 		///     Unknown properties parser
@@ -71,13 +65,14 @@ namespace Sufficit.Asterisk.Manager.Events
 				Attributes.Add(key, value);
 			return true;
 		}
+
 		public object GetSetter() => this;
 
-        public Dictionary<string, string> ParseSpecial(Dictionary<string, string> attributes)
+        public Dictionary<string, string> ParseSpecial(Dictionary<string, string>? attributes)
         {
-			return attributes;
+			return attributes ?? new Dictionary<string, string>();
         }
 
-        public Dictionary<string, string> Attributes { get; internal set; }
+        public Dictionary<string, string>? Attributes { get; internal set; }
 	}
 }

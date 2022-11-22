@@ -9,7 +9,7 @@ namespace Sufficit.Asterisk
     public class PeerInfo
     {
         public AsteriskChannelProtocol Protocol { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = default!;
         public AsteriskChannelState Status { get; set; }
     }
 }

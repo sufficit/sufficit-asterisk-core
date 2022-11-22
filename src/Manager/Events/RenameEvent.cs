@@ -6,24 +6,14 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// </summary>
 	public class RenameEvent : ManagerEvent
 	{
-		protected internal string oldName;
-		protected internal string newName;
-
 		/// <summary>
 		/// Get/Set the new name of the channel.
 		/// </summary>
-		public string NewName
-		{
-			get { return newName; }
-			set { this.newName = value; }
-		}
-		/// <summary>
-		/// Get/Set the old name of the channel.
-		/// </summary>
-		public string OldName
-		{
-			get { return oldName; }
-			set { this.oldName = value; }
-		}
-	}
+		public string? NewName { get; set; }
+
+        /// <summary>
+        /// Get/Set the old name of the channel.
+        /// </summary>
+        public string? OldName { get; set; }
+    }
 }

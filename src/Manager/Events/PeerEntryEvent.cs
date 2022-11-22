@@ -21,24 +21,24 @@ namespace Sufficit.Asterisk.Manager.Events
         /// </summary>
         public AsteriskChannelProtocol ChannelType { get; set; }
 
-		public string ObjectName { get; set; }
+		public string? ObjectName { get; set; }
 
 		/// <summary>
 		/// For SIP peers this is either "peer" or "user".
 		/// </summary>
-		public string ChanObjectType { get; set; }
+		public string? ChanObjectType { get; set; }
 
 		/// <summary>
 		/// Get/Set the IP address of the peer.
 		/// </summary>
-		public string IpAddress { get; set; }
+		public string? IpAddress { get; set; }
 		public int IpPort { get; set; }
 		public bool Dynamic { get; set; }
 		public bool NatSupport { get; set; }
 		public bool VideoSupport { get; set; }
 		public bool TextSupport { get; set; }
 		public bool Acl { get; set; }
-		public string Status { get; set; }
+		public string? Status { get; set; }
 		public bool RealtimeDevice { get; set; }
 		public bool AutoForceRPort { get; set; }
 		public bool ForceRPort { get; set; }
