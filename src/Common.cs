@@ -30,7 +30,7 @@ namespace Sufficit.Asterisk
         public static char[] VAR_DELIMITER = {'|'};
 
         public static IFormatProvider CultureInfoEn = new CultureInfo("en-US", false);
-
+        
         #endregion
 
         #region AGI Constants 
@@ -44,6 +44,9 @@ namespace Sufficit.Asterisk
         /// <summary> The default AGI bind address. </summary>
         public const string AGI_BIND_ADDRESS = "0.0.0.0";
 
+        public const string AGI_DEFAULT_RETURN_VALUE = "AGI_RETVAL";
+        public const string AGI_DEFAULT_RETURN_STATUS = "AGISTATUSMESSAGE";
+
         public const string AGI_DEFAULT_RESOURCE_BUNDLE_NAME = "fastagi-mapping.resources";
         public const string AGI_END_OF_PROPER_USAGE = "520 End of proper usage.";
 
@@ -53,10 +56,7 @@ namespace Sufficit.Asterisk
         public static Regex AGI_STATUS_PATTERN = new Regex("^(\\d{3})[ -]", RegexOptions.Compiled);
         public static Regex AGI_RESULT_PATTERN = new Regex("^200 result= *(\\S+)", RegexOptions.Compiled);
         public static Regex AGI_PARENTHESIS_PATTERN = new Regex("^200 result=\\S* +\\((.*)\\)", RegexOptions.Compiled);
-
-        public static Regex AGI_ADDITIONAL_ATTRIBUTES_PATTERN = new Regex("^200 result=\\S* +(\\(.*\\) )?(.+)$",
-            RegexOptions.Compiled);
-
+        public static Regex AGI_ADDITIONAL_ATTRIBUTES_PATTERN = new Regex("^200 result=\\S* +(\\(.*\\) )?(.+)$", RegexOptions.Compiled);
         public static Regex AGI_ADDITIONAL_ATTRIBUTE_PATTERN = new Regex("(\\S+)=(\\S+)", RegexOptions.Compiled);
         public static Regex AGI_SYNOPSIS_PATTERN = new Regex("^\\s*Usage:\\s*(.*)\\s*$", RegexOptions.Compiled);
         public static Regex AGI_SCRIPT_PATTERN = new Regex("^([^\\?]*)\\?(.*)$");
