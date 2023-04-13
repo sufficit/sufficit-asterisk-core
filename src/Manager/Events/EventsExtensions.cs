@@ -6,7 +6,7 @@ namespace Sufficit.Asterisk.Manager.Events
     {
         public static PeerStatus GetPeerStatus(this PeerEntryEvent source)
         {
-            var text = source.Status.Trim().ToLowerInvariant();
+            var text = source.Status?.Trim().ToLowerInvariant() ?? string.Empty;
             if (text == "unknown") return PeerStatus.Unknown;
             if (text == "unmonitored") return PeerStatus.Unmonitored;
             if (text.StartsWith("ok")) return PeerStatus.Ok;

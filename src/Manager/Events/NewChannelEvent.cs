@@ -4,8 +4,8 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// A NewChannelEvent is triggered when a new channel is created.<br/>
 	/// It is implemented in channel.c
 	/// </summary>
-	public class NewChannelEvent : AbstractChannelInfoEvent
-	{
+	public class NewChannelEvent : AbstractChannelInfoEvent, IChannelEvent
+    {
 
 	}
 }

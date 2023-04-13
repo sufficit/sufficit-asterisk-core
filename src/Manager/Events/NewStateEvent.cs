@@ -6,8 +6,8 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// A NewStateEvent is triggered when the state of a channel has changed.<br/>
 	/// It is implemented in channel.c
 	/// </summary>
-	public class NewStateEvent : AbstractChannelInfoEvent
-	{
+	public class NewStateEvent : AbstractChannelInfoEvent, IChannelEvent
+    {
 
 	}
 }
