@@ -1,10 +1,12 @@
+using Sufficit.Manager.Events.Abstracts;
+
 namespace Sufficit.Asterisk.Manager.Events
 {
-	/// <summary>
-	/// A ZapShowChannelsEvent is triggered in response to a ZapShowChannelsAction and shows the state of a zap channel.
-	/// </summary>
-	/// <seealso cref="Manager.Action.ZapShowChannelsAction" />
-	public class ZapShowChannelsEvent : ResponseEvent
+    /// <summary>
+    /// A ZapShowChannelsEvent is triggered in response to a ZapShowChannelsAction and shows the state of a zap channel.
+    /// </summary>
+    /// <seealso cref="Manager.Action.ZapShowChannelsAction" />
+    public class ZapShowChannelsEvent : ResponseEvent
 	{
 		private string signalling;
 		private string context;

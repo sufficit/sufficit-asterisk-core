@@ -5,12 +5,12 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     For SIP peers this is "SIP".
         /// </summary>
-        public string ChannelType { get; set; }
+        public string ChannelType { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the name of the channel.
         /// </summary>
-        public string ReloadReason { get; set; }
+        public string ReloadReason { get; set; } = string.Empty;
 
         public int UserCount { get; set; }
 

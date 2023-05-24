@@ -1,3 +1,5 @@
+using Sufficit.Manager.Events.Abstracts;
+
 namespace Sufficit.Asterisk.Manager.Events
 {
     /// <summary>

@@ -1,11 +1,13 @@
+using Sufficit.Manager.Events.Abstracts;
+
 namespace Sufficit.Asterisk.Manager.Events
 {
-	/// <summary>
-	/// A QueueEntryEvent is triggered in response to a QueueStatusAction and contains information about an entry in a queue.<br/>
-	/// It is implemented in apps/app_queue.c
-	/// </summary>
-	/// <seealso cref="Manager.Action.QueueStatusAction" />
-	public class QueueEntryEvent : ResponseEvent
+    /// <summary>
+    /// A QueueEntryEvent is triggered in response to a QueueStatusAction and contains information about an entry in a queue.<br/>
+    /// It is implemented in apps/app_queue.c
+    /// </summary>
+    /// <seealso cref="Manager.Action.QueueStatusAction" />
+    public class QueueEntryEvent : ResponseEvent
 	{
 		/// <summary>
 		/// Get/Set the name of the queue that contains this entry.

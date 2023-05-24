@@ -1,9 +1,9 @@
 using System;
-using Sufficit.Asterisk.Manager.Events;
+using Sufficit.Manager.Events.Abstracts;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-	public class OriginateResponseEvent : ResponseEvent, IChannelEvent
+    public class OriginateResponseEvent : ResponseEvent, IChannelEvent
 	{
 		public string Response { get; set; }
 		public string Context { get; set; }

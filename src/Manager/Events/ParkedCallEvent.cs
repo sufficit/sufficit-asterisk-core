@@ -1,14 +1,14 @@
-using Sufficit.Asterisk.Manager.Events;
+using Sufficit.Manager.Events.Abstracts;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-	/// <summary>
-	/// A ParkedCallEvent is triggered when a channel is parked (in this case no
-	/// action id is set) and in response to a ParkedCallsAction.<br/>
-	/// It is implemented in res/res_features.c
-	/// </summary>
-	/// <seealso cref="Manager.Action.ParkedCallsAction"/>
-	public class ParkedCallEvent : ResponseEvent
+    /// <summary>
+    /// A ParkedCallEvent is triggered when a channel is parked (in this case no
+    /// action id is set) and in response to a ParkedCallsAction.<br/>
+    /// It is implemented in res/res_features.c
+    /// </summary>
+    /// <seealso cref="Manager.Action.ParkedCallsAction"/>
+    public class ParkedCallEvent : ResponseEvent
 	{
 		private string exten;
 		private string from;

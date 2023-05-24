@@ -1,15 +1,16 @@
-using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Collections;
+using System.Collections.Specialized;
+using System;
 
-namespace Sufficit.Asterisk.Manager.Events
+namespace Sufficit.Asterisk.Manager.Events.Abstracts
 {
-	public abstract class AbstractAgentVariables : ManagerEvent, IActionVariable
+	public abstract class AbstractAgentVariables : ManagerEvent
 	{
-		private Dictionary<string, string> variables;
+		private NameValueCollection variables;
 
-		public string Channel { get; set; }
+		public string Channel { get; set; } 
 
 		public string Server { get; set; }
 
@@ -34,7 +35,7 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// <summary>
 		/// Get the variables dictionary to set on the originated call.
 		/// </summary>
-		public Dictionary<string, string> GetVariables()
+		public NameValueCollection GetVariables()
 		{
 			return variables;
 		}
@@ -44,7 +45,7 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// <summary>
 		/// Set the variables dictionary to set on the originated call.
 		/// </summary>
-		public void SetVariables(Dictionary<string, string> vars)
+		public void SetVariables(NameValueCollection vars)
 		{
 			this.variables = vars;
 		}
@@ -56,13 +57,10 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// </summary>
 		public void SetVariable(string key, string val)
 		{
-			if (variables == null)
-				variables = new Dictionary<string, string>();
-			if (variables.ContainsKey(key))
-				variables[key] = val;
-			else
-				variables.Add(key, val);
+			variables ??= new NameValueCollection();			
+			variables.Set(key, val);
 		}
+
 		#endregion
 
 		#region GetVariable(string name)

@@ -1,12 +1,13 @@
 using System.Text.Json.Serialization;
+using Sufficit.Manager.Events.Abstracts;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-	/// <summary>
-	/// A StatusEvent is triggered for each active channel in response to a StatusAction.
-	/// </summary>
-	/// <seealso cref="Manager.Action.StatusAction" />
-	public class StatusEvent : ResponseEvent, IChannelEvent, IManagerEvent, IChannelInfoEvent
+    /// <summary>
+    /// A StatusEvent is triggered for each active channel in response to a StatusAction.
+    /// </summary>
+    /// <seealso cref="Manager.Action.StatusAction" />
+    public class StatusEvent : ResponseEvent, IChannelEvent, IManagerEvent, IChannelInfoEvent
 	{
 		#region IMPLEMENT INTERFACE CHANNEL EVENT
 

@@ -1,13 +1,13 @@
-using Sufficit.Asterisk.Manager.Events;
+using Sufficit.Manager.Events.Abstracts;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-	/// <summary>
-	/// A QueueStatusCompleteEvent is triggered after the state of all queues has been reported in response to a QueueStatusAction.<br/>
-	/// Since Asterisk 1.2
-	/// </summary>
-	/// <seealso cref="QueueStatusAction" />
-	public class QueueStatusCompleteEvent : ResponseEvent, IActionListComplete
+    /// <summary>
+    /// A QueueStatusCompleteEvent is triggered after the state of all queues has been reported in response to a QueueStatusAction.<br/>
+    /// Since Asterisk 1.2
+    /// </summary>
+    /// <seealso cref="QueueStatusAction" />
+    public class QueueStatusCompleteEvent : ResponseEvent, IActionListComplete
 	{
 		public string EventList { get; set; }
 

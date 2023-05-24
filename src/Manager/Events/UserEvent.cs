@@ -38,11 +38,12 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// <seealso cref="Manager.ManagerConnection.RegisterUserEventClass"/>
 	public class UserEvent : ManagerEvent, IParseSupport
 	{
-		public bool Parse(string key, string value)
+		public void Parse(string key, string value)
 		{
 			if (key == "userevent")
                 UserEventName = value;
-			return BaseParse(key, value);
+
+			BaseParse(key, value);
 		}
 
 		public string UserEventName { get; set; } = default!;
@@ -53,7 +54,7 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// <param name="key">key name</param>
 		/// <param name="value">key value</param>
 		/// <returns>true - value parsed, false - can't parse value</returns>
-		public virtual bool BaseParse(string key, string value)
+		public virtual void BaseParse(string key, string value)
 		{
 			if (Attributes == null)
 				Attributes = new Dictionary<string, string>();
@@ -63,7 +64,6 @@ namespace Sufficit.Asterisk.Manager.Events
 				Attributes[key] += string.Concat(Common.LINE_SEPARATOR, value);
 			else
 				Attributes.Add(key, value);
-			return true;
 		}
 
 		public object GetSetter() => this;

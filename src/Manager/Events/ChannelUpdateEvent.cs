@@ -1,5 +1,8 @@
+using System;
+
 namespace Sufficit.Asterisk.Manager.Events
 {
+    [Obsolete("removed on asterisk 12")]
     public class ChannelUpdateEvent : ManagerEvent
     {
         /// <summary>
@@ -8,20 +11,20 @@ namespace Sufficit.Asterisk.Manager.Events
         ///     "IAX2",
         ///     "GTALK"
         /// </summary>
-        public string ChannelType { get; set; }
+        public string ChannelType { get; set; } = string.Empty;
 
-        public string SipCallId { get; set; }
+        public string SipCallId { get; set; } = string.Empty;
 
-        public string SipFullContact { get; set; }
+        public string SipFullContact { get; set; } = string.Empty;
 
-        public string PeerName { get; set; }
+        public string PeerName { get; set; } = string.Empty;
 
-        public string IAX2CallnoLocal { get; set; }
+        public string IAX2CallnoLocal { get; set; } = string.Empty;
 
-        public string IAX2CallnoRemote { get; set; }
+        public string IAX2CallnoRemote { get; set; } = string.Empty;
 
-        public string IAX2Peer { get; set; }
+        public string IAX2Peer { get; set; } = string.Empty;
 
-        public string GTalkSID { get; set; }
+        public string GTalkSID { get; set; } = string.Empty;
     }
 }

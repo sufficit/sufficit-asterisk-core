@@ -1,12 +1,13 @@
 using System.Text.Json.Serialization;
+using Sufficit.Manager.Events.Abstracts;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-	/// <summary>
-	/// A PeerEntryEvent is triggered in response to a SIPPeersAction or SIPShowPeerAction and contains information about a peer.<br/>
-	/// It is implemented in channels/chan_sip.c
-	/// </summary>
-	public class PeerEntryEvent : ResponseEvent, IPeerStatus
+    /// <summary>
+    /// A PeerEntryEvent is triggered in response to a SIPPeersAction or SIPShowPeerAction and contains information about a peer.<br/>
+    /// It is implemented in channels/chan_sip.c
+    /// </summary>
+    public class PeerEntryEvent : ResponseEvent, IPeerStatus
 	{
         #region IMPLEMENT INTERFACE PEER STATUS
 

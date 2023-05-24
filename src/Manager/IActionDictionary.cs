@@ -5,13 +5,14 @@ using System.Collections.Specialized;
 namespace Sufficit.Asterisk.Manager.Events
 {
     /// <summary>
-    ///     IActionVariable
+    ///     IActionDictionary
     /// </summary>
-    public interface IActionVariable
+    public interface IActionDictionary
     {
         /// <summary>
-        /// Variable: concat all items here ...
+        /// Key: Value <br />
+        /// All action lines skipping the reserved ones like "variable"
         /// </summary>
-        NameValueCollection? Variable { get; }
+        IDictionary? Dictionary { get; }
     }
 }
