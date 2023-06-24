@@ -54,11 +54,7 @@ namespace Sufficit.Asterisk
         public const int AGI_DEFAULT_TIMEOUT = 0;
 
         public static Regex AGI_STATUS_PATTERN = new Regex("^(\\d{3})[ -]", RegexOptions.Compiled);
-
-        /// <summary>
-        /// Named Group (code) http status code
-        /// </summary>
-        public static Regex AGI_STATUS_PATTERN_NAMED = new Regex(@"^(?<code>\d{3})[ -]", RegexOptions.Compiled);
+               
 
         public static Regex AGI_RESULT_PATTERN = new Regex("^200 result= *(\\S+)", RegexOptions.Compiled);
         public static Regex AGI_PARENTHESIS_PATTERN = new Regex("^200 result=\\S* +\\((.*)\\)", RegexOptions.Compiled);

@@ -13,7 +13,7 @@ namespace Sufficit.Asterisk.FastAGI
         public AGIScriptAttribute(string route)
         {
             if (string.IsNullOrWhiteSpace(route))
-                throw new ArgumentNullException("route");
+                throw new ArgumentNullException(nameof(route));
 
             Route = route;
         }
