@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
@@ -9,8 +10,10 @@ namespace Sufficit.Asterisk.Manager.Events
     /// </summary>
     public class DeviceStateChangeEvent : ManagerEventFromAsterisk
     {
-        public string Device { get; set; }
+        [JsonPropertyName("device")]
+        public string Device { get; set; } = default!;
 
+        [JsonPropertyName("state")]
         public AsteriskDeviceStatus State { get; set; }
     }
 }
