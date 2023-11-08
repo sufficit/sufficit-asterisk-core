@@ -1,3 +1,4 @@
+using Sufficit.Asterisk.Manager.Events.Abstracts;
 using System;
 
 namespace Sufficit.Asterisk.Manager.Events
@@ -11,8 +12,8 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// <b>Removed since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+13+Documentation" target="_blank" alt="Asterisk 13 wiki docs">Asterisk 13</see>.<br/>
 	/// </para>
 	/// </summary>
-	public class QueueMemberPausedEvent : AbstractQueueMemberEvent
-	{
+	public class QueueMemberPausedEvent : QueueMemberEvent
+    {
 		/// <summary>
 		/// The reason a member was paused
 		/// </summary>

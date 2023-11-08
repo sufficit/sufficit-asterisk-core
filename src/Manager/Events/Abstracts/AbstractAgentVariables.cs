@@ -19,12 +19,13 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
 		public string UniqueId { get; set; }
 
 		#region Variable
+
 		/// <summary>
 		/// Get/Set the variables to set on the queue call in native asterisk format.<br/>
 		/// Example: "VAR1=abc|VAR2=def".
 		/// </summary>
 		[Obsolete("Use GetVariables and SetVariables instead.", true)]
-		public string Variable
+		public string? Variable
 		{
 			get { return null; /* return Helper.JoinVariables(variables, Common.GET_VAR_DELIMITER(this.Server), "="); */ }
 			set { /* variables = Helper.ParseVariables(variables, value, Common.GET_VAR_DELIMITER(this.Server)); */ }

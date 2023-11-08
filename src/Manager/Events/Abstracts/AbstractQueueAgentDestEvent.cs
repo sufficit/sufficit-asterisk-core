@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sufficit.Asterisk.Manager.Events
+namespace Sufficit.Asterisk.Manager.Events.Abstracts
 {
-    public abstract class AbstractQueueAgentDestEvent : AbstractChannelInfoEvent, IQueueEvent, IQueueMemberEvent, IDestChannelEvent
+    public abstract class AbstractQueueAgentDestEvent : AbstractChannelInfoEvent, IQueueEvent, IQueueMemberDestEvent, IDestChannelEvent
     {
         /// <summary>
         ///     Get/Set the name of the queue.

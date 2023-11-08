@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Sufficit.Asterisk.Manager.Events
+namespace Sufficit.Asterisk.Manager.Events.Abstracts
 {
     public abstract class AbstractDestChannelEvent : AbstractChannelInfoEvent, IDestChannelEvent, IChannelEvent
     {

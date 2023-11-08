@@ -1,3 +1,5 @@
+using Sufficit.Asterisk.Manager.Events.Abstracts;
+
 namespace Sufficit.Asterisk.Manager.Events
 {
     /// <summary>
@@ -7,14 +9,14 @@ namespace Sufficit.Asterisk.Manager.Events
     /// </summary>
     public class AgentCalledEvent : AbstractQueueAgentDestEvent
     {
-        public string AgentName { get; set; }
+        public string AgentName { get; set; } = string.Empty;
 
-        public string AgentCalled { get; set; }
+        public string AgentCalled { get; set; } = string.Empty;
 
-        public string ChannelCalling { get; set; }
+        public string ChannelCalling { get; set; } = string.Empty;
 
-        public string DestinationChannel { get; set; }
+        public string DestinationChannel { get; set; } = string.Empty;
 
-        public string Extension { get; set; }
+        public string Extension { get; set; } = string.Empty;
     }
 }

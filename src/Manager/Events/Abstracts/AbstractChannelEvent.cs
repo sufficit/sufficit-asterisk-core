@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Sufficit.Asterisk.Manager.Events
+namespace Sufficit.Asterisk.Manager.Events.Abstracts
 {
 	/// <summary>
 	/// Abstract base class providing common properties for HangupEvent, NewChannelEvent and NewStateEvent.

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Sufficit.Asterisk.Manager.Events
+namespace Sufficit.Asterisk.Manager.Events.Abstracts
 {
     public abstract class ManagerEvent : IManagerEvent
     {

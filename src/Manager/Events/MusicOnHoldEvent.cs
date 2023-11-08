@@ -1,4 +1,6 @@
-﻿namespace Sufficit.Asterisk.Manager.Events
+﻿using Sufficit.Asterisk.Manager.Events.Abstracts;
+
+namespace Sufficit.Asterisk.Manager.Events
 {
     /// <summary>
     ///     A MusicOnHoldEvent is triggered when music on hold starts or stops on a channel.<br/>

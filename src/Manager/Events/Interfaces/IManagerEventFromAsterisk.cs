@@ -12,5 +12,10 @@ namespace Sufficit.Asterisk.Manager.Events
         /// Can be null !, check before use
         /// </summary>
         double? Timestamp { get; }
+
+        /// <summary>
+        /// Asterisk system name that raised this event
+        /// </summary>
+        string? SystemName { get; }
     }
 }

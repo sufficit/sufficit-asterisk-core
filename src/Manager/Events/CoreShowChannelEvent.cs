@@ -1,12 +1,11 @@
 ﻿using Sufficit.Asterisk;
-using Sufficit.Asterisk.Manager.Events;
-using Sufficit.Manager.Events.Abstracts;
+using Sufficit.Asterisk.Manager.Events.Abstracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Sufficit.Manager.Events
+namespace Sufficit.Asterisk.Manager.Events
 {
     public class CoreShowChannelEvent : ResponseEvent, IChannelEvent
     {

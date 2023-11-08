@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using Sufficit.Asterisk.Manager.Events;
 
-namespace Sufficit.Manager.Events.Abstracts
+namespace Sufficit.Asterisk.Manager.Events.Abstracts
 {
     /// <summary>
     /// Abstract base class for events triggered in response to a ManagerAction.<br/>

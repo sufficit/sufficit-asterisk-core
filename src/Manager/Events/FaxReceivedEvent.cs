@@ -1,4 +1,5 @@
 using Sufficit.Asterisk.Manager.Events;
+using Sufficit.Asterisk.Manager.Events.Abstracts;
 
 namespace Sufficit.Asterisk.Manager.Events
 {

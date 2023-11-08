@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
+    /// <summary>
+    /// Interface for generic events
+    /// </summary>
     public interface IManagerEvent 
     {
         /// <summary>

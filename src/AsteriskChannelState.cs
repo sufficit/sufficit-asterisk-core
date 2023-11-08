@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Sufficit.Asterisk
@@ -14,8 +15,13 @@ namespace Sufficit.Asterisk
         Ringing,
         Up,
         Busy,
+
+        [Description("Dialing Offhook")]
         DialingOffhook,
+
+        [Description("Pre-ring")]
         PreRing,
+
         Unknown,
     }
 }

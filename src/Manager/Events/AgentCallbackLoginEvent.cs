@@ -1,3 +1,5 @@
+using Sufficit.Asterisk.Manager.Events.Abstracts;
+
 namespace Sufficit.Asterisk.Manager.Events
 {
     /// <summary>
@@ -10,8 +12,8 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Get/Set the name of the agent that logged in.
         /// </summary>
-        public string Agent { get; set; }
+        public string Agent { get; set; } = string.Empty;
 
-        public string LoginChan { get; set; }
+        public string LoginChan { get; set; } = string.Empty;
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Sufficit.Asterisk.Manager.Events
+﻿using Sufficit.Asterisk.Manager.Events.Abstracts;
+
+namespace Sufficit.Asterisk.Manager.Events
 {
     /// <summary>
     ///     Raised when music on hold has stopped on a channel.<br />

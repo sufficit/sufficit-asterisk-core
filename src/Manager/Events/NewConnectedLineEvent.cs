@@ -1,3 +1,4 @@
+using Sufficit.Asterisk.Manager.Events.Abstracts;
 using System.Text.Json.Serialization;
 
 namespace Sufficit.Asterisk.Manager.Events

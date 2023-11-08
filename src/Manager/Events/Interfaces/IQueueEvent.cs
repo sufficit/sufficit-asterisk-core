@@ -6,9 +6,7 @@ namespace Sufficit.Asterisk.Manager.Events
 {
     public interface IQueueEvent 
     {
-        /// <summary>
-		/// Get/Set the name of the queue that contains this entry.
-		/// </summary>
+        /// <summary>The name of the queue</summary>
 		string Queue { get; }
     }
 }

@@ -1,4 +1,4 @@
-using Sufficit.Asterisk.Manager.Events;
+using Sufficit.Asterisk.Manager.Events.Abstracts;
 using System;
 using System.Text.Json.Serialization;
 
@@ -12,23 +12,24 @@ namespace Sufficit.Asterisk.Manager.Events
 	public class QueueParamsEvent : QueueEvent, IResponseEvent
 	{
 		#region IMPLEMENT INTERFACE RESPONSE EVENT
+
 		/// <summary>
 		/// Get/Set the action id of the ManagerAction that caused this event.
 		/// </summary>
-		public string ActionId { get; set; }
+		public string ActionId { get; set; } = default!;
 
-		/// <summary>
-		/// Get/Set the internal action id of the ManagerAction that caused this event.
-		/// </summary>
-		[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        /// <summary>
+        /// Get/Set the internal action id of the ManagerAction that caused this event.
+        /// </summary>
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
 		public string? InternalActionId { get; set; }
 
-		#endregion 
-	
+		#endregion
+
 		/// <summary>
 		/// Get/Set queue strategy.
 		/// </summary>
-		public string Strategy { get; set; }
+		public string Strategy { get; set; } = default!;
 
 		/// <summary> Returns the maximum number of people waiting in the queue or 0 for unlimited.<br/>
 		/// This corresponds to the maxlen setting in queues.conf.

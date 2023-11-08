@@ -1,9 +1,9 @@
-﻿using Sufficit.Manager.Events.Abstracts;
+﻿using Sufficit.Asterisk.Manager.Events.Abstracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sufficit.Manager.Events
+namespace Sufficit.Asterisk.Manager.Events
 {
     public class CoreShowChannelsCompleteEvent : ResponseEvent
     {

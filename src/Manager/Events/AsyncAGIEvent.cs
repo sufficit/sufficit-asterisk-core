@@ -1,3 +1,5 @@
+using Sufficit.Asterisk.Manager.Events.Abstracts;
+
 namespace Sufficit.Asterisk.Manager.Events
 {
     public class AsyncAGIEvent : ManagerEvent

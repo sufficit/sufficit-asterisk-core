@@ -1,3 +1,4 @@
+using Sufficit.Asterisk.Manager.Events.Abstracts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
