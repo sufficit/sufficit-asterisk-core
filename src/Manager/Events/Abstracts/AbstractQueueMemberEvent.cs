@@ -8,7 +8,7 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
     /// <summary>
     /// Abstract base class providing common properties for all queue members events.
     /// </summary>
-    public abstract class QueueMemberEvent : QueueEvent, IQueueMemberEvent
+    public abstract class AbstractQueueMemberEvent : QueueEvent, IQueueMemberEvent
     {
         /// <inheritdoc cref="IQueueMemberDestEvent.Interface"/>
         [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
@@ -24,6 +24,10 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         [JsonPropertyName("membername")]
         public string MemberName { get; set; } = default!;
+
+        [JsonIgnore]
+        [JsonPropertyName("name")]
+        public string Name { get => MemberName; set => MemberName = value; }
 
         /// <inheritdoc cref="IQueueMemberEvent.Location"/>
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault)]

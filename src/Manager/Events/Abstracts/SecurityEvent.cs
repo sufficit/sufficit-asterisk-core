@@ -55,6 +55,7 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
         /// <summary>
         /// The Service account associated with the security event notification
         /// </summary>
+        /// <remarks>Its diferent from channel accountid, this information refers to user extension account for login</remarks>
         [JsonPropertyName("accountid")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public string AccountId { get; set; } = default!;

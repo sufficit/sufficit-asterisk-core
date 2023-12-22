@@ -12,11 +12,11 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// <b>Removed since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+13+Documentation" target="_blank" alt="Asterisk 13 wiki docs">Asterisk 13</see>.<br/>
 	/// </para>
 	/// </summary>
-	public class QueueMemberPausedEvent : QueueMemberEvent
+	public class QueueMemberPausedEvent : AbstractQueueMemberEvent
     {
 		/// <summary>
 		/// The reason a member was paused
 		/// </summary>
-		public string Reason { get; set; }		
+		public string? Reason { get; set; }		
 	}
 }
