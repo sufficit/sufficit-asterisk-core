@@ -1,4 +1,5 @@
 using Sufficit.Asterisk.Manager.Events.Abstracts;
+using System.Text.Json.Serialization;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
@@ -16,7 +17,8 @@ namespace Sufficit.Asterisk.Manager.Events
         ///     Get/Set bridged channel. <br />
         ///     Removed from Asterisk 12
         /// </summary>
-        public string BridgedChannel { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault)]
+        public string? BridgedChannel { get; set; }
 
         /// <summary>
         ///     Get/Set the amount of time the caller was on ring.

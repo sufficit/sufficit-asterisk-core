@@ -8,6 +8,7 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// A HangupEvent is triggered when a channel is hung up.<br/>
 	/// It is implemented in channel.c
 	/// </summary>
+	/// <seealso cref="Privilege.call" />
 	public class HangupEvent : AbstractChannelInfoEvent
     {
 		/// <summary>

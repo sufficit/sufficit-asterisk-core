@@ -26,5 +26,7 @@ namespace Sufficit.Asterisk.Manager.Events
 		string Context { get; }
 		string Exten { get; }
 		string Priority { get; }
+
+		string AccountCode { get; }
 	}
 }

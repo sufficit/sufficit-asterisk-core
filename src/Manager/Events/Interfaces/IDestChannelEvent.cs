@@ -14,6 +14,7 @@ namespace Sufficit.Asterisk.Manager.Events
         string DestConnectedLineNum { get; }
         string DestConnectedLineName { get; }
         string DestLanguage { get; }
+        string DestAccountCode { get; }
         string DestContext { get; }
         string DestExten { get; }
         string DestPriority { get; }
