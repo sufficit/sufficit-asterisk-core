@@ -1,5 +1,3 @@
-using Sufficit.Asterisk.Manager;
-using Sufficit.Asterisk.Manager.Events;
 using Sufficit.Asterisk.Manager.Events.Abstracts;
 using System;
 using System.Collections.Generic;
@@ -12,10 +10,10 @@ namespace Sufficit.Asterisk.Manager.Events
     /// </summary>
     public class UnknownEvent : ManagerEventFromAsterisk
     {
-        public string Channel {get; set;}
+        public string? Channel {get; set;}
 
-        public string Server { get; set; }
+        public string? Server { get; set; }
 
-        public string UniqueId { get; set; }
+        public string? UniqueId { get; set; }
     }
 }

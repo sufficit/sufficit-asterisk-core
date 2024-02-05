@@ -9,6 +9,11 @@ namespace Sufficit.Asterisk.IO
     public class AGISocketOptions
     {
         /// <summary>
+        /// Section for use of .json configurations
+        /// </summary>
+        public const string SECTIONNAME = "FastAGISocket";
+
+        /// <summary>
         ///     Total bytes for buffer size. <br />
         ///     Its important to avoid split of received and send messages <br />
         ///     Asterisk uses a dynamic value, so you have to choose by yourself

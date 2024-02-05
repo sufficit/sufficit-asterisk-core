@@ -21,22 +21,6 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Get/Set if the agent or the caller terminated the call.
         /// </summary>
-        public string Reason { get; set; }
-
-
-        public string channelstate { get; set; }
-        public string channelstatedesc { get; set; }
-        public string calleridnum { get; set; }
-        public string calleridname { get; set; }
-        public string connectedlinenum { get; set; }
-        public string connectedlinename { get; set; }
-        public string language { get; set; }
-        public string context { get; set; }
-
-        public string exten { get; set; }
-
-        public string priority { get; set; }
-
-        public string linkedid { get; set; }
+        public string Reason { get; set; } = default!;
     }
 }
