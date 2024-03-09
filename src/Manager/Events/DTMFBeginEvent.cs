@@ -6,7 +6,7 @@ namespace Sufficit.Asterisk.Manager.Events
     ///     Raised when a DTMF digit has started on a channel.<br/>
     ///     See <see target="_blank"  href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+ManagerEvent_DTMFBegin">https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+ManagerEvent_DTMFBegin</see>
     /// </summary>
-    public class DTMFBeginEvent : ManagerEvent
+    public class DTMFBeginEvent : AbstractChannelEvent
     {
         /// <summary>
         /// Gets or sets the direction.
