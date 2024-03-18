@@ -5,7 +5,7 @@ using System.Collections.Specialized;
 using System;
 
 namespace Sufficit.Asterisk.Manager.Events.Abstracts
-{
+{	
 	public abstract class AbstractAgentVariables : ManagerEvent
 	{
 		private NameValueCollection variables;
