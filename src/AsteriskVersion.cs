@@ -19,6 +19,9 @@ namespace Sufficit.Asterisk
         ASTERISK_15 = 150,
         ASTERISK_16 = 160,
         ASTERISK_17 = 170,
+        ASTERISK_18 = 180,
+        ASTERISK_19 = 190,
+        ASTERISK_20 = 200,
         ASTERISK_Newer = 999
     }
 }
