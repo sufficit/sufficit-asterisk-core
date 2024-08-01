@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Sufficit.Asterisk.Manager.Events
 {
 	/// <summary>
@@ -23,6 +25,8 @@ namespace Sufficit.Asterisk.Manager.Events
         /// "DNSmgr reload Requested",
         /// "CDR subsystem reload requested"
         /// .</summary>
+        [JsonPropertyName("message")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault)]
         public string? Message { get; set; }
     }
 }

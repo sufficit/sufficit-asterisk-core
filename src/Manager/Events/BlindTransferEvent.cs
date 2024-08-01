@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-	public class BlindTransferEvent : ManagerEvent
+	public class BlindTransferEvent : ManagerEventFromAsterisk
 	{
-        public string Result { get; set; }
-        public string TransfererChannel { get; set; }
-        public string TransfererChannelState { get; set; }
-        public string TransfererChannelStatedesc { get; set; }
-        public string TransfererCallerIdNum { get; set; }
-        public string TransfererCallerIdName { get; set; }
+        public string Result { get; set; } = default!;
+        public string TransfererChannel { get; set; } = default!;
+        public string TransfererChannelState { get; set; } = default!;
+        public string TransfererChannelStatedesc { get; set; } = default!;
+        public string TransfererCallerIdNum { get; set; } = default!;
+        public string TransfererCallerIdName { get; set; } = default!;
         public string TransfererConnectedLineNum { get; set; }
         public string TransfererConnectedLineName { get; set; }
         public string TransfererLanguage { get; set; }

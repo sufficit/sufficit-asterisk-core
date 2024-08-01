@@ -8,7 +8,7 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// This event is implemented in channels/chan_iax2.c and
 	/// channels/chan_sip.c
 	/// </summary>
-	public class RegistryEvent : ManagerEvent
+	public class RegistryEvent : ManagerEventFromAsterisk
 	{
 		/// <summary>
 		/// Channel type

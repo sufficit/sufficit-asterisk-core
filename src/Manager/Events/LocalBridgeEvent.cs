@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using Sufficit.Asterisk.Manager.Events.Abstracts;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-    public class LocalBridgeEvent : ManagerEvent
+    public class LocalBridgeEvent : ManagerEventFromAsterisk
     {
         public string Context { get; set; } = string.Empty;
         public string Exten { get; set; } = string.Empty;
@@ -25,6 +26,9 @@ namespace Sufficit.Asterisk.Manager.Events
         public string LocalOneUniqueId { get; set; } = string.Empty;
         public string LocalOneLinkedId { get; set; } = string.Empty;
 
+        [JsonPropertyName("localoneaccountcode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault)]
+        public string? LocalOneAccountCode { get; set; }
 
         public string LocalTwoChannel { get; set; } = string.Empty;
         public string LocalTwoChannelState { get; set; } = string.Empty;
@@ -39,5 +43,9 @@ namespace Sufficit.Asterisk.Manager.Events
         public string LocalTwoPriority { get; set; } = string.Empty;
         public string LocalTwoUniqueId { get; set; } = string.Empty;
         public string LocalTwoLinkedId { get; set; } = string.Empty;
+
+        [JsonPropertyName("localtwoaccountcode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault)]
+        public string? LocalTwoAccountCode { get; set; }
     }
 }

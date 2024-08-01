@@ -77,12 +77,11 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
         /// <see cref="IQueueMemberEvent.RingInUse" />
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         [JsonPropertyName("ringinuse")]
-        public bool RingInUse { get; }
+        public bool RingInUse { get; set; }
 
         /// <see cref="IQueueMemberEvent.InCall" />
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         [JsonPropertyName("incall")]
-        public bool InCall { get; }
+        public bool InCall { get; set; }
 
         /// <inheritdoc cref="IQueueMemberEvent.LoginTime"/>
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

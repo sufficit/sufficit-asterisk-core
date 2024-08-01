@@ -10,10 +10,10 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
 	/// </summary>
 	public abstract class AbstractChannelStateEvent : AbstractChannelEvent, IChannelEvent, IChannelStateEvent
 	{
-        /// <inheritdoc cref="IChannelEvent.ChannelState"/>
+        /// <inheritdoc cref="IChannelStateEvent.ChannelState"/>
         public AsteriskChannelState ChannelState { get; set; }
 
-        /// <inheritdoc cref="IChannelEvent.ChannelStatedDesc"/>        
+        /// <inheritdoc cref="IChannelStateEvent.ChannelStatedDesc"/>        
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ChannelStateDesc { get; set; }
     }

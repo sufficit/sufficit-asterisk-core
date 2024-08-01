@@ -6,13 +6,13 @@ namespace Sufficit.Asterisk.Manager.Events
     ///     A MessageWaitingEvent is triggered when someone leaves voicemail.<br />
     ///     It is implemented in apps/app_voicemail.c
     /// </summary>
-    public class MessageWaitingEvent : ManagerEvent
+    public class MessageWaitingEvent : AbstractChannelInfoEvent
     {
         /// <summary>
         ///     Get/Set the name of the mailbox that has waiting messages.<br />
         ///     The name of the mailbox is of the form numberOfMailbox@context, e.g. 1234@default.
         /// </summary>
-        public string Mailbox { get; set; }
+        public string Mailbox { get; set; } = default!;
 
         /// <summary>
         ///     Get/Set the number of new messages in the mailbox.

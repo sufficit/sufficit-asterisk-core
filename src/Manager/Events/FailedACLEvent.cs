@@ -9,20 +9,31 @@ using System.Text;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-    public class FailedACLEvent : ManagerEvent
+    public class FailedACLEvent : ManagerEventFromAsterisk
     {
         /// <summary>
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string LocalAddress { get; set; }
+        public string LocalAddress { get; set; } = default!;
         /// <summary>
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string RemoteAddress { get; set; }
+        public string RemoteAddress { get; set; } = default!;
         /// <summary>
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string ACLName { get; set; }
+        public string ACLName { get; set; } = default!;
 
+        public DateTime EventTv { get; set; }
+
+        public string Severity { get; set; } = default!;
+
+        public string Service { get; set; } = default!;
+
+        public string EventVersion { get; set; } = default!;
+        
+        public string AccountId { get; set; } = default!;
+
+        public string SessionId { get; set; } = default!;
     }
 }

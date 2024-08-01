@@ -12,7 +12,7 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// For maximum compatibily do not use the Link and Unlink events in your code.
 	/// Just use the Bridge event and check for isLink() and isUnlink().
 	/// </summary>
-	public class BridgeEvent : ManagerEvent, IParseSupport
+	public class BridgeEvent : ManagerEventFromAsterisk, IParseSupport
 	{
 		public enum BridgeStates
 		{
@@ -39,13 +39,10 @@ namespace Sufficit.Asterisk.Manager.Events
 		internal bool isunlink;
 
 
-		#region ParseSpecial(Dictionary<string, string> attributes)
-		/// <summary>
-		/// Unknown properties parser
-		/// </summary>
-		/// <param name="attributes">dictionary</param>
-		/// <returns>updated dictionary</returns>
-		public Dictionary<string, string> ParseSpecial(Dictionary<string, string>? attributes)
+        #region ParseSpecial(Dictionary<string, string> attributes)
+
+        /// <inheritdoc cref="IParseSupport.ParseSpecial(Dictionary{string, string}?)"/>
+        public Dictionary<string, string> ParseSpecial(Dictionary<string, string>? attributes)
 		{
 			if (attributes == null)
 			{

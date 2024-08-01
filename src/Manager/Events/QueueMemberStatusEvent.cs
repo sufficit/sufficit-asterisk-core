@@ -8,6 +8,6 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// </summary>
 	public class QueueMemberStatusEvent : AbstractQueueMemberEvent
 	{
-		
+
 	}
 }
