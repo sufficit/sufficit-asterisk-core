@@ -10,36 +10,40 @@ namespace Sufficit.Asterisk.Manager.Events
     /// </summary>
     public class CdrEvent : ManagerEvent
     {
-        public string AccountCode { get; set; }
+        public string? AccountCode { get; set; }
 
-        public string Src { get; set; }
+        public string? Source { get; set; }
 
-        public string Destination { get; set; }
+        public string Destination { get; set; } = string.Empty;
 
-        public string DestinationContext { get; set; }
+        public string DestinationContext { get; set; } = string.Empty;
 
-        public string CallerId { get; set; }
+        public string CallerId { get; set; } = string.Empty;
 
-        public string DestinationChannel { get; set; }
+        public string Channel { get; set; } = string.Empty;
 
-        public string LastApplication { get; set; }
+        public string? DestinationChannel { get; set; }
 
-        public string LastData { get; set; }
+        public string LastApplication { get; set; } = string.Empty;
 
-        public string StartTime { get; set; }
+        public string? LastData { get; set; }
 
-        public string AnswerTime { get; set; }
+        public string StartTime { get; set; } = string.Empty;
 
-        public string EndTime { get; set; }
+        public string AnswerTime { get; set; } = string.Empty;
+
+        public string EndTime { get; set; } = string.Empty;
 
         public long Duration { get; set; }
 
         public long BillableSeconds { get; set; }
 
-        public string Disposition { get; set; }
+        public string Disposition { get; set; } = string.Empty;
 
-        public string AmaFlags { get; set; }
+        public string AMAFlags { get; set; } = string.Empty;
 
-        public string UserField { get; set; }
+        public string UniqueId { get; set; } = default!;
+
+        public string? UserField { get; set; }
     }
 }

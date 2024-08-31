@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
-    public interface IResponseEvent
+    public interface IResponseEvent : IManagerEvent
     {
 		/// <summary>
 		/// Get/Set the action id of the ManagerAction that caused this event.
