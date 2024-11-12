@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace Sufficit.Asterisk.Manager.Events
 {
     /// <summary>
-    /// Triggered in response to a <see cref="QueueStatusAction"/>
+    ///     Triggered in response to a <see cref="QueueStatusAction"/>
     /// </summary>
     public class QueueMemberEvent : AbstractQueueMemberEvent, IResponseEvent
     {
