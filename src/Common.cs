@@ -47,6 +47,18 @@ namespace Sufficit.Asterisk
         public const string AGI_DEFAULT_RETURN_VALUE = "AGI_RETVAL";
         public const string AGI_DEFAULT_RETURN_STATUS = "AGISTATUSMESSAGE";
 
+        /// <summary>
+        ///     Don't send HANGUP signal for AGI, must be setted before calls AGI by dialplan
+        /// </summary>
+        public const string AGI_SIGHUP = "AGISIGHUP";
+
+        /// <summary>
+        ///     If setted "yes", asterisk server exit agi process imediately after a channel hangup
+        /// </summary>
+        public const string AGI_EXIT_ON_HANGUP = "AGIEXITONHANGUP";
+
+        public const char AGI_PARAMETER_SEPARATOR = '&';
+
         public const string AGI_DEFAULT_RESOURCE_BUNDLE_NAME = "fastagi-mapping.resources";
         public const string AGI_END_OF_PROPER_USAGE = "520 End of proper usage.";
 
