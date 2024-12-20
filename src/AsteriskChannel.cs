@@ -21,7 +21,7 @@ namespace Sufficit.Asterisk
         public AsteriskChannel(string source)
         {
             if (string.IsNullOrWhiteSpace(source))
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
             
             Id = source;
             if (Id.Contains("/"))

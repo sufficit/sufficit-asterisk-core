@@ -20,5 +20,12 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// Get/Set the textual representation of the hangup cause.
 		/// </summary>
 		public string CauseTxt { get; set; } = default!;
+
+		public string? Address { get; set; }
+
+        /// <inheritdoc cref="AsteriskChannelProtocol"/>
+        public AsteriskChannelProtocol ChannelType { get; set; }
+        public string? Peer { get; set; }
+        public string? PeerStatus { get; set; }
     }
 }
