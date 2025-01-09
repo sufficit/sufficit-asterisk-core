@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
 
 	<PropertyGroup Label="Sufficit Targeting">
-		<TargetFrameworks>netstandard2.0;net6.0;net7.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;net7.0;net8.0;net9.0</TargetFrameworks>
 		<RootNamespace>Sufficit.Asterisk</RootNamespace>
 		<ImplicitUsings>false</ImplicitUsings>
 		<LangVersion>8.0</LangVersion>
@@ -60,8 +60,16 @@
 			<PackagePath></PackagePath>
 		</None>
 	</ItemGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<NoWarn>$(NoWarn);nullable</NoWarn>
+	</PropertyGroup>
 	
-	<ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' ">
 		<PackageReference Include="System.Text.Json" Version="[*,9.0.0)" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net9.0' ">
+		<PackageReference Include="System.Text.Json" Version="[*,10.0.0)" />
 	</ItemGroup>
 </Project>
