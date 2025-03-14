@@ -7,7 +7,6 @@ namespace Sufficit.Asterisk
     /// <summary>
     /// Status - Numerical value of the extension status. Extension status is determined by the combined device state of all items contained in the hint.
     /// </summary>
-    [Flags]
     public enum ExtensionStatus
     {
         /// <summary>
