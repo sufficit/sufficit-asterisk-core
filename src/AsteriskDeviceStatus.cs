@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -13,7 +14,7 @@ namespace Sufficit.Asterisk
     {        
         Unknown,
 
-        [Description("NOT_INUSE")]
+        [EnumMember(Value = "NOT_INUSE")]
         NotInUse,
 
         InUse,

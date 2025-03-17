@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Sufficit.Asterisk
@@ -16,10 +17,10 @@ namespace Sufficit.Asterisk
         Up,
         Busy,
 
-        [Description("Dialing Offhook")]
+        [EnumMember(Value = "Dialing Offhook")]
         DialingOffhook,
 
-        [Description("Pre-ring")]
+        [EnumMember(Value = "Pre-ring")]
         PreRing,
 
         Unknown,

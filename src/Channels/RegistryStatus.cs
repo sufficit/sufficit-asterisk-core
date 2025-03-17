@@ -51,8 +51,8 @@ namespace Sufficit.Asterisk.Channels
 		/// Successful IAX2 registrations do not use the this property at all.
 		/// </summary>
         [JsonPropertyName("status")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull | JsonIgnoreCondition.WhenWritingDefault)]
-        public string? Status { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public RegistrationState Status { get; set; }
 
         /// <summary>
         /// Get/Set the cause of a rejected registration.
