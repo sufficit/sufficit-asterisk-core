@@ -1,14 +1,13 @@
 using Sufficit.Asterisk.Manager.Events.Abstracts;
-using System;
 using System.Text.Json.Serialization;
 
 namespace Sufficit.Asterisk.Manager.Events
 {
 	/// <summary>
-	/// An ExtensionStatusEvent is triggered when the state of an extension changes.<br/>
+	/// An ExtensionStatusEvent is triggered when the state of an extension changes or in response to a <see cref="Manager.Action.ExtensionStateListAction"/>.<br/>
 	/// It is implemented in manager.c
 	/// </summary>
-	public class ExtensionStatusEvent : ManagerEventFromAsterisk, IExtensionStatusEvent
+	public class ExtensionStatusEvent : ResponseEvent, IExtensionStatusEvent
 	{
 		string IEventBase.Key => "Event:ExtensionStatus";
 
@@ -21,19 +20,19 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         /// Get/Set the extension.
         /// </summary>
-        [JsonPropertyName("exten")] 
+        [JsonPropertyName("exten")]
 		public string Exten { get; set; } = default!;
 
         /// <summary>
         /// Get/Set the context of the extension.
         /// </summary>
-        [JsonPropertyName("context")] 
+        [JsonPropertyName("context")]
 		public string Context { get; set; } = default!;
 
         /// <summary>
         /// Get/Set the state of the extension.
         /// </summary>
-        [JsonPropertyName("status")] 
+        [JsonPropertyName("status")]
 		public ExtensionStatus Status { get; set; }
 
         [JsonPropertyName("statustext")]
