@@ -1,58 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Sufficit.Asterisk
 {
     public class AsteriskChannel
     {
-        [JsonConstructor]
-        public AsteriskChannel() { }
-
-        public AsteriskChannel(PeerInfo source)
-        {
-            Id = $"{source.Protocol}/{source.Name}";
-            Protocol = source.Protocol;
-            Name = source.Name;
-        }
-
-        public AsteriskChannel(string source)
-        {
-            if (string.IsNullOrWhiteSpace(source))
-                throw new ArgumentNullException(nameof(source));
-            
-            Id = source;
-            if (Id.Contains("/"))
-            {
-                var splitted = Id.Split('/');
-                var tech = splitted[0];
-                Protocol = tech.ToAsteriskChannelProtocol();
-
-                var track = splitted[1];   
-                var separator = track.LastIndexOf('-');
-                if (separator > -1)
-                {
-                    Suffix = track.Substring(separator + 1, track.Length - (separator + 1));
-                    Name = track.Substring(0, separator);
-                }
-                else
-                {
-                    Name = track;
-                }
-
-                if (Name.Contains("@"))
-                {
-                    var withContext = Name.Split('@');
-                    if (withContext.Length >= 1)
-                        Context = withContext[1];
-
-                    Name = withContext[0];
-                }
-            }            
-        }
-
         public string Id { get; set; } = default!;
 
         public AsteriskChannelProtocol Protocol { get; set; }
@@ -65,6 +16,21 @@ namespace Sufficit.Asterisk
 
         public string GetPeer() => $"{Protocol}/{Name}";
 
+        #region OVERRIDES
+
         public override string ToString() => Id;
+
+        public override bool Equals(object? obj)
+            => obj is AsteriskChannel other
+            && string.Equals(Id, other.Id, StringComparison.OrdinalIgnoreCase)
+            && Protocol.Equals(other.Protocol)
+            && string.Equals(Name, other.Name, StringComparison.OrdinalIgnoreCase)
+            && string.Equals(Context, other.Context, StringComparison.OrdinalIgnoreCase)
+            && string.Equals(Suffix, other.Suffix, StringComparison.OrdinalIgnoreCase);
+
+        public override int GetHashCode()
+            => (Id, Protocol, Name, Context, Suffix).GetHashCode();
+
+        #endregion
     }
 }

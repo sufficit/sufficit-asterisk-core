@@ -16,7 +16,7 @@ namespace Sufficit.Asterisk
         public const int DEFAULT_PORT = 5038;
 
         /// <summary>Line separator</summary>
-        public const string LINE_SEPARATOR = "\r\n";
+        public const string LINE_SEPARATOR = "\n";
 
         public static Regex ASTERISK_VERSION = new Regex("^(?:Output: ){0,1}Asterisk\\s+\\D*([0-9]+\\.[0-9]+\\.[0-9]+|[1-9][0-9]-r[0-9]+|[0-9]+\\.[0-9]+-cert[0-9]).*$",
                           RegexOptions.Compiled | RegexOptions.IgnoreCase );
