@@ -28,5 +28,8 @@ namespace Sufficit.Asterisk
 
         [EnumMember(Value = "IAX2")]
         IAX2,
+
+        [EnumMember(Value = "MESSAGE")]
+        MESSAGE,
     }
 }
