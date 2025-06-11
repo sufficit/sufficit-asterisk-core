@@ -5,17 +5,17 @@ namespace Sufficit.Asterisk.Manager
     /// <summary>
     /// Encapsula todos os parâmetros necessários para estabelecer uma conexão com a Asterisk Manager Interface (AMI).
     /// </summary>
-    public class ManagerConnectionParameters
+    public class ManagerConnectionParameters : ReconnectorParameters
     {
         /// <summary>
         /// O endereço IP ou nome do host do servidor Asterisk.
         /// </summary>
-        public string Hostname { get; set; } = "localhost";
+        public string Address { get; set; } = "localhost";
 
         /// <summary>
         /// A porta da interface AMI. O padrão é 5038.
         /// </summary>
-        public int Port { get; set; } = 5038;
+        public uint Port { get; set; } = Defaults.Port;
 
         /// <summary>
         /// O nome de usuário para autenticação na AMI.
@@ -37,16 +37,11 @@ namespace Sufficit.Asterisk.Manager
         /// A codificação de caracteres a ser usada na comunicação via socket. O padrão é ASCII.
         /// </summary>
         public Encoding SocketEncoding { get; set; } = Encoding.ASCII;
-
+                
         /// <summary>
-        /// Define se a conexão deve ser mantida viva e tentar reconectar automaticamente. O padrão é true.
+        ///    Time interval, in milliseconds, between ping operations.
         /// </summary>
-        public bool KeepAlive { get; set; } = true;
-
-        /// <summary>
-        /// Time in milliseconds 
-        /// </summary>
-        public uint? PingInterval { get; set; }
+        public uint? PingInterval { get; set; } = 5000;
 
         /// <summary>
         /// Gets or sets a value indicating whether the old version of the feature is enabled. <br />
@@ -55,11 +50,20 @@ namespace Sufficit.Asterisk.Manager
         /// </summary>
         public bool? OldVersion { get; set; } = false;
 
+        public override bool Equals (object? obj)
+            => obj is ManagerConnectionParameters other &&
+            other.Address == Address &&
+            other.Port == Port &&
+            other.Username == Username &&
+            other.Password == Password &&
+            other.UseMD5Authentication == UseMD5Authentication &&
+            other.SocketEncoding == SocketEncoding &&
+            other.PingInterval == PingInterval &&
+            other.OldVersion == OldVersion &&
+            base.Equals(obj);
 
-        public int ReconnectRetryFast { get; set; } = 5;
-        public int ReconnectRetryMax { get; set; } = 10;
-        public int ReconnectIntervalFast { get; set; } = 5000;
-        public int ReconnectIntervalMax { get; set; } = 30000;
+        public override int GetHashCode()
+            => (Address, Port, Username, Password, UseMD5Authentication, SocketEncoding, PingInterval, OldVersion).GetHashCode() ^ base.GetHashCode();
     }
 }
 

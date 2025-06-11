@@ -11,5 +11,6 @@ namespace Sufficit.Asterisk
         ///     Used even for Manager as for Gateway interfaces.
         /// </summary>
         public static readonly CultureInfo CultureInfo = new CultureInfo("en-US", false);
+
     }
 }
