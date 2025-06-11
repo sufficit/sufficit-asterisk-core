@@ -25,5 +25,50 @@ This project is a class library. The recommended way to use it is by installing 
 You can install the package via the .NET CLI or the NuGet Package Manager Console.
 
 **.NET CLI:**
-```sh
-dotnet add package Sufficit.Asterisk.Core
+
+    dotnet add package Sufficit.Asterisk.Core
+
+**Package Manager Console:**
+
+    Install-Package Sufficit.Asterisk.Core
+
+## 🛠️ Usage
+
+This is a core library project and is typically not run standalone. It should be referenced by other projects in the Sufficit Asterisk ecosystem.
+
+After installation, you can use the classes and models from the library:
+
+**Example (`.csproj` file):**
+
+    <ItemGroup>
+      <PackageReference Include="Sufficit.Asterisk.Core" Version="x.x.x" />
+    </ItemGroup>
+
+**Example (C# Code):**
+
+    using Sufficit.Asterisk.Core.Events;
+
+    public void HandleNewChannel(NewChannelEvent newChannelEvent)
+    {
+        Console.WriteLine($"New channel created: {newChannelEvent.Channel}");
+    }
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1.  Fork the Project.
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the Branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📧 Contact
+
+Sufficit - [contato@sufficit.com.br](mailto:contato@sufficit.com.br)
+
+Project Link: [https://github.com/sufficit/sufficit-asterisk-core](https://github.com/sufficit/sufficit-asterisk-core)
