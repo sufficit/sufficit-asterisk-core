@@ -1,6 +1,6 @@
 # Sufficit.Asterisk.Core
 
-![Sufficit Logo](https://avatars.githubusercontent.com/u/85236101?s=200&v=4)
+![Sufficit Logo](https://avatars.githubusercontent.com/u/66928451?s=200&v=4)
 
 [![NuGet](https://img.shields.io/nuget/v/Sufficit.Asterisk.Core.svg)](https://www.nuget.org/packages/Sufficit.Asterisk.Core/)
 
