@@ -1,9 +1,7 @@
-<table>
-  <tr>
-    <td><h1>Sufficit.Asterisk.Core</h1></td>
-    <td align="right"><img src="https://avatars.githubusercontent.com/u/66928451?s=200&v=4" alt="Sufficit Logo" width="100"></td>
-  </tr>
-</table>
+<h1>
+  Sufficit.Asterisk.Core
+  <a href="https://github.com/sufficit"><img src="https://avatars.githubusercontent.com/u/66928451?s=200&v=4" alt="Sufficit Logo" width="80" align="right"></a>
+</h1>
 
 [![NuGet](https://img.shields.io/nuget/v/Sufficit.Asterisk.Core.svg)](https://www.nuget.org/packages/Sufficit.Asterisk.Core/)
 
