@@ -5,7 +5,7 @@ using System.Text;
 namespace Sufficit.Asterisk.Manager.Events
 {
 	/// <summary>
-	/// Facility to Events Panel, 
+	///		Facility to Events Panel
 	/// </summary>
     public interface IChannelInfoEvent : IChannelEvent, IChannelStateEvent
 	{
@@ -23,10 +23,28 @@ namespace Sufficit.Asterisk.Manager.Events
 		string? ConnectedLineName { get; }
 
 		string Language { get; }
-		string Context { get; }
-		string Exten { get; }
-		string Priority { get; }
 
+        #region WHERE
+
+        /// <summary>
+        ///		Current dialplan context of the channel
+        /// </summary>
+        string Context { get; }
+
+        /// <summary>
+        ///		Current dialplan extension of the channel
+        /// </summary>
+        string Exten { get; }
+
+        /// <summary>
+        ///		Current dialplan priority of the channel
+        /// </summary>
+        string Priority { get; }
+
+		#endregion
+		/// <summary>
+		///		User account code for the channel, if set, or null if not set.
+		/// </summary>
 		string? AccountCode { get; }
 	}
 }

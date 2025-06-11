@@ -19,16 +19,10 @@ namespace Sufficit.Asterisk.IO
         ///     Asterisk uses a dynamic value, so you have to choose by yourself
         /// </summary>
         public uint BufferSize { get; set; }
-            = 1024;
+            = 8192 * 2;
 
         public Encoding Encoding { get; set; }
             = Encoding.ASCII;
-
-        /// <summary>
-        ///     Auto start to read from background
-        /// </summary>
-        public bool Start { get; set; }
-            = true;
 
         public const uint RECEIVE_TIMEOUT = 10000;
 

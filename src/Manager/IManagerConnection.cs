@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sufficit.Asterisk.Manager
 {
-    public interface IManagerConnection
-    {
-        string Hostname { get; set; }
-        bool KeepAlive { get; set; }
-        int SocketReceiveBufferSize { get; set; }
-        string Version { get; }
-        AsteriskVersion AsteriskVersion { get; }
-        bool IsConnected();
+    /// <summary>
+    /// Defines the contract for a connection to the Asterisk Manager Interface.
+    /// This interface includes essential properties and methods for managing the connection lifecycle,
+    /// sending actions, and handling responses/events.
+    /// </summary>
+    public interface IManagerConnection : IDisposable
+    {        
+
+        /// <summary>
+        /// Registers a custom user event class for parsing specific user-defined events.
+        /// </summary>
+        /// <param name="userEventClass">The type of the user event to register.</param>
+        void RegisterUserEventClass(Type userEventClass);
     }
 }

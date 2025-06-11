@@ -12,6 +12,13 @@ namespace Sufficit.Asterisk
         ASTERISK_1_6 = 16,
         ASTERISK_1_8 = 18,
         ASTERISK_10 = 100,
+
+        /// <summary>
+        ///     Indicates a unknown version equals or before than 10 <br />
+        ///     It is a key change for variables delimeters
+        /// </summary>
+        ASTERISK_Older = 101,
+
         ASTERISK_11 = 110,
         ASTERISK_12 = 120,
         ASTERISK_13 = 130,
@@ -22,6 +29,12 @@ namespace Sufficit.Asterisk
         ASTERISK_18 = 180,
         ASTERISK_19 = 190,
         ASTERISK_20 = 200,
+        ASTERISK_21 = 210,
+        ASTERISK_22 = 220,
+
+        /// <summary>
+        ///     Indicates a unknown version newer than 22
+        /// </summary>
         ASTERISK_Newer = 999
     }
 }

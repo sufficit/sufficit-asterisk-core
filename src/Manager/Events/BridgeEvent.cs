@@ -41,8 +41,8 @@ namespace Sufficit.Asterisk.Manager.Events
 
         #region ParseSpecial(Dictionary<string, string> attributes)
 
-        /// <inheritdoc cref="IParseSupport.ParseSpecial(Dictionary{string, string}?)"/>
-        public Dictionary<string, string> ParseSpecial(Dictionary<string, string>? attributes)
+        /// <inheritdoc cref="IParseSupport.ParseSpecial(IDictionary{string, string}?)"/>
+        public IDictionary<string, string> ParseSpecial(IDictionary<string, string>? attributes)
 		{
 			if (attributes == null)
 			{
@@ -117,7 +117,7 @@ namespace Sufficit.Asterisk.Manager.Events
 
 		public object GetSetter() => this;
 
-		public Dictionary<string, string>? Attributes { get; internal set; }
+		public IDictionary<string, string>? Attributes { get; internal set; }
 
 		#endregion
 

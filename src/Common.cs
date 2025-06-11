@@ -15,7 +15,11 @@ namespace Sufficit.Asterisk
         /// <summary> The port to use if none is provided.</summary>
         public const int DEFAULT_PORT = 5038;
 
-        /// <summary>Line separator</summary>
+        /// <summary>
+        ///     Line separator, should be implemented at asterisk server level in the future <br />
+        ///     Because it leads with messages received from asterisk operational system and should use the same NewLine
+        /// </summary>
+        /// <remarks>* \n for Unix defaults <see cref="Environment.NewLine"></see></remarks>
         public const string LINE_SEPARATOR = "\n";
 
         public static Regex ASTERISK_VERSION = new Regex("^(?:Output: ){0,1}Asterisk\\s+\\D*([0-9]+\\.[0-9]+\\.[0-9]+|[1-9][0-9]-r[0-9]+|[0-9]+\\.[0-9]+-cert[0-9]).*$",
@@ -25,12 +29,7 @@ namespace Sufficit.Asterisk
         public static char[] RESPONSE_KEY_VALUE_SEPARATOR = {':'};
         public static char[] MINUS_SEPARATOR = {'-'};
         public static char INTERNAL_ACTION_ID_DELIMITER = '#';
-
-        [Obsolete("VAR_DELIMITER moved to ManagerConnection", true)]
-        public static char[] VAR_DELIMITER = {'|'};
-
-        public static IFormatProvider CultureInfoEn = new CultureInfo("en-US", false);
-        
+                
         #endregion
 
         #region AGI Constants 

@@ -5,18 +5,16 @@ namespace Sufficit.Asterisk
 {
     public interface IParseSupport
     {
-        Dictionary<string, string>? Attributes { get; }
-
         void Parse(string key, string value);
 
         /// <summary>
-        ///     Unknown properties parser. <br />
-        ///     Custom threatments
+        ///     It receives the complete buffer dictionary and waits as response the dictionary that should be used for populate the properties.<br />        ///     
+        ///     * if has custom treatment, just return the updated attributes <br />  
         /// </summary>
-        /// <remarks>* if has no custom treatments, just return full attributes or an empty one</remarks>
+        /// <remarks>* if has no custom treatments, just return full attributes</remarks>
         /// <param name="attributes">buffer dictionary</param>
         /// <returns>updated merged dictionary</returns>
-        Dictionary<string, string> ParseSpecial(Dictionary<string, string>? attributes);
+        IDictionary<string, string> ParseSpecial(IDictionary<string, string>? attributes);
 
         object GetSetter();
     }
