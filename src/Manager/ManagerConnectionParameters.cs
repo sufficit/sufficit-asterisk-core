@@ -50,6 +50,12 @@ namespace Sufficit.Asterisk.Manager
         /// </summary>
         public bool? OldVersion { get; set; } = false;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether the connection should be forced to use IPv4.
+        /// This can resolve PlatformNotSupportedException on some systems where dual-stack (IPv6/IPv4) socket behavior is problematic.
+        /// </summary>
+        public bool ForceIPv4 { get; set; } = false;
+
         public override bool Equals (object? obj)
             => obj is ManagerConnectionParameters other &&
             other.Address == Address &&
@@ -60,10 +66,11 @@ namespace Sufficit.Asterisk.Manager
             other.SocketEncoding == SocketEncoding &&
             other.PingInterval == PingInterval &&
             other.OldVersion == OldVersion &&
+            other.ForceIPv4 == ForceIPv4 &&
             base.Equals(obj);
 
         public override int GetHashCode()
-            => (Address, Port, Username, Password, UseMD5Authentication, SocketEncoding, PingInterval, OldVersion).GetHashCode() ^ base.GetHashCode();
+            => (Address, Port, Username, Password, UseMD5Authentication, SocketEncoding, PingInterval, OldVersion, ForceIPv4).GetHashCode() ^ base.GetHashCode();
     }
 }
 
