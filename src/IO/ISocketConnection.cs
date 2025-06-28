@@ -8,31 +8,18 @@ using System.Threading.Tasks;
 
 namespace Sufficit.Asterisk.IO
 {
-    public interface ISocketConnection : IDisposable
-    {
-        /// <summary>
-        ///     Test for underlaying socket is ready and last knowning as connected   
-        /// </summary>
-        /// <remarks>
-        ///     "Last Knowning" because the <see cref="System.Net.Sockets.Socket.Connected">Connected</see>  information from <see cref="System.Net.Sockets.Socket">Net.Socket</see> indicates only the last try (send|receive) and not the current info.
-        /// </remarks>
-        bool IsConnected { get; }
-        
+    public interface ISocketConnection : ISocketStatus, IDisposable
+    {   
         bool IsHangUp { get; }
 
-        IPAddress LocalAddress { get; }
+        IPAddress? LocalAddress { get; }
         int LocalPort { get; }
-        IPAddress RemoteAddress { get; }
+        IPAddress? RemoteAddress { get; }
         int RemotePort { get; }
 
         bool IsRemoteRequest { get; }
 
-        void Close(string? reason = null);
-
-        [Obsolete("prefer dispose, if you want to close that, you cant re-open, so save info that you need and than dispose.")]
-        void Close(AGISocketReason reason);
-
-        void Write(string s);
+        Task WriteAsync(string data, CancellationToken cancellationToken);        
 
         NetworkStream? GetStream();
                 
@@ -64,5 +51,6 @@ namespace Sufficit.Asterisk.IO
         IntPtr Handle { get; }
 
         AGISocketOptions Options { get; }
+
     }
 }

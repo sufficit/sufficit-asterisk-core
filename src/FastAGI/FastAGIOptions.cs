@@ -37,8 +37,8 @@ namespace Sufficit.Asterisk.FastAGI
         ///     If set to true, causes the AGIChannel to throw an exception when return status is 0 and reply is HANGUP.<br />
         ///     This is set to false by default to maintain backwards compatibility
         /// </summary>
+        [Obsolete("not used anymore, there is an event to control the hangup")]
         public bool SCHANGUP_CAUSES_EXCEPTION { get; set; } = false;
-
 
         public AGIScriptMapping[] ScriptMapping { get; set; } = { };
     }

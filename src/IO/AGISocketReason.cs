@@ -29,13 +29,17 @@ namespace Sufficit.Asterisk.IO
         NOTRECEIVING = 1 << 201 | NORMALENDING,
 
         /// <summary>
-        ///     Last action for each script, closes the connection     
+        /// Represents a state where the script has ended beacuse the socket resources have been disposed.
         /// </summary>
-        /// <remarks>AsterNET.FastAGI.AGIConnectionHandler.Run(CancellationToken)</remarks>
+        /// <remarks>This enumeration value is categorized under "NormalEnding" and is serialized as
+        /// "disposed". It combines the <see cref="NORMALENDING"/> flag with a unique bit-shifted value.</remarks>
         [Category("NormalEnding")]
-        [EnumMember(Value = "script end")]
-        SCRIPTEND = 1 << 202 | NORMALENDING,
+        [EnumMember(Value = "disposed")]
+        DISPOSED = 1 << 202 | NORMALENDING,
 
+        /// <summary>
+        ///     Underlaying socket was aborted, probably by a timeout or an exception
+        /// </summary>
         [Category("NormalEnding")]
         [EnumMember(Value = "operation cancelled")]
         ABORTED = 1 << 203 | NORMALENDING,
@@ -45,6 +49,16 @@ namespace Sufficit.Asterisk.IO
         /// </summary>
         [Category("NormalEnding")]
         [EnumMember(Value = "connection reseted")]
-        RESETED = 1 << 204 | NORMALENDING
+        RESETED = 1 << 204 | NORMALENDING,
+
+        /// <summary>
+        /// Represents a normal ending state where the operation was cancelled due to a token cancellation.
+        /// </summary>
+        /// <remarks>This value indicates that the operation was intentionally stopped as a result of a
+        /// cancellation token being triggered. It combines the <see cref="NORMALENDING"/> flag with a unique identifier
+        /// for the cancellation state.</remarks>
+        [Category("NormalEnding")]
+        [EnumMember(Value = "token cancelled")]
+        CANCELLED = 1 << 205 | NORMALENDING
     }
 }
