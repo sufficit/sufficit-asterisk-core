@@ -5,10 +5,11 @@ using System.Collections.Generic;
 namespace Sufficit.Asterisk.Manager
 {
     /// <summary>
-    /// Interface for managing Asterisk Manager event subscriptions and dispatching.
-    /// Provides contract for event subscription, dispatching, and lifecycle management.
+    /// Interface for managing Asterisk Manager Interface (AMI) event subscriptions and dispatching.
+    /// Provides contract for event subscription, dispatching, and lifecycle management specifically
+    /// for events from the Asterisk Manager Interface.
     /// </summary>
-    public interface IAsteriskEventManager : IDisposable, IAsyncDisposable
+    public interface IManagerEventSubscriptions : IDisposable, IAsyncDisposable
     {
         /// <summary>
         /// Gets a value indicating whether this instance has been disposed.
