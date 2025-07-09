@@ -8,7 +8,7 @@ namespace Sufficit.Asterisk.Manager
     /// Interface for managing Asterisk Manager event subscriptions and dispatching.
     /// Provides contract for event subscription, dispatching, and lifecycle management.
     /// </summary>
-    public interface IAsteriskManagerSubscriptions : IDisposable, IAsyncDisposable
+    public interface IAsteriskEventManager : IDisposable, IAsyncDisposable
     {
         /// <summary>
         /// Gets a value indicating whether this instance has been disposed.

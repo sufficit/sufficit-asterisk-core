@@ -1,6 +1,7 @@
 # Copilot Instructions
-<!-- Version: 1.0 -->
+<!-- Version: 1.1 -->
 
+* https://docs.asterisk.org - asterisk documentation
 * code comments should always be in English;
 * response to user queries should be in IDE current language;
 * avoid to change code that was not related to the query;

@@ -28,7 +28,7 @@ namespace Sufficit.Asterisk.Manager
         /// </summary>
         /// <param name="events">The new event subscription system to use.</param>
         /// <param name="disposable">Whether the previous event system should be disposed.</param>
-        void Use(IAsteriskManagerSubscriptions events, bool disposable = false);
+        void Use(IAsteriskEventManager events, bool disposable = false);
 
         /// <summary>
         /// Event triggered when the connection to the Asterisk server is lost or disconnected.
@@ -69,7 +69,7 @@ namespace Sufficit.Asterisk.Manager
         /// <summary>
         /// Gets the event management system for this connection.
         /// </summary>
-        IAsteriskManagerSubscriptions Events { get; }
+        IAsteriskEventManager Events { get; }
 
         /// <summary>
         /// Gets the array of characters used as delimiters for variable parsing.
