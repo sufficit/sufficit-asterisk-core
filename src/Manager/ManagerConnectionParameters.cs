@@ -3,8 +3,30 @@
 namespace Sufficit.Asterisk.Manager
 {
     /// <summary>
-    /// Encapsula todos os parâmetros necessários para estabelecer uma conexão com a Asterisk Manager Interface (AMI).
+    /// Encapsulates all parameters necessary to establish a connection to the Asterisk Manager Interface (AMI).
+    /// Designed for short-term, single-action connections where you execute commands and disconnect.
     /// </summary>
+    /// <remarks>
+    /// ManagerConnectionParameters is intended for single-use or short-term connections where you:
+    /// - Connect to Asterisk
+    /// - Execute one or more specific actions/commands
+    /// - Disconnect manually
+    /// 
+    /// This differs from AMIProviderOptions which is designed for persistent, long-running connections
+    /// that maintain event listeners and automatic reconnection capabilities.
+    /// 
+    /// Use ManagerConnectionParameters when you need:
+    /// - Execute specific commands and disconnect
+    /// - Manual connection lifecycle management
+    /// - Simple, one-time operations
+    /// - No event monitoring requirements
+    /// 
+    /// Use AMIProviderOptions when you need:
+    /// - Continuous event monitoring from Asterisk
+    /// - Automatic reconnection on connection loss
+    /// - Persistent connection state management
+    /// - Long-running background services
+    /// </remarks>
     public class ManagerConnectionParameters : ReconnectorParameters
     {
         /// <summary>
