@@ -64,36 +64,41 @@
 		</None>
 	</ItemGroup>
 
-	<!-- #region Sufficit Versioning Options V:202508231708 -->
+	<!-- #region Sufficit Versioning Options V:202508251150 -->
 
 	<PropertyGroup Label="Sufficit Versioning Options" Condition="'$(TargetFramework)' == 'netstandard2.0'">
 		<PkgVersion>[9.*,10.0.0)</PkgVersion>
+		<PkgVersionUntil8>[*,10.0.0)</PkgVersionUntil8>
 		<NoWarn>$(NoWarn);nullable</NoWarn>
 
 		<!-- Set language version per framework to ensure compatibility with generated global usings -->
-		<LangVersion>8.0</LangVersion>
+		<LangVersion>9.0</LangVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Sufficit Versioning Options" Condition=" '$(TargetFramework)' == 'net6.0' ">
 		<PkgVersion>[*,7.0.0)</PkgVersion>
+		<PkgVersionUntil8>[8.*,10.0.0)</PkgVersionUntil8>
 		<LangVersion>10.0</LangVersion>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Sufficit Versioning Options" Condition=" '$(TargetFramework)' == 'net7.0' ">
 		<PkgVersion>[*,8.0.0)</PkgVersion>
+		<PkgVersionUntil8>[8.*,10.0.0)</PkgVersionUntil8>
 		<LangVersion>10.0</LangVersion>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Sufficit Versioning Options" Condition=" '$(TargetFramework)' == 'net8.0' ">
 		<PkgVersion>[8.*,10.0.0)</PkgVersion>
+		<PkgVersionUntil8>[*,10.0.0)</PkgVersionUntil8>
 		<LangVersion>10.0</LangVersion>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Sufficit Versioning Options" Condition=" '$(TargetFramework)' == 'net9.0' ">
 		<PkgVersion>[9.*,10.0.0)</PkgVersion>
+		<PkgVersionUntil8>[*,10.0.0)</PkgVersionUntil8>
 		<LangVersion>10.0</LangVersion>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
