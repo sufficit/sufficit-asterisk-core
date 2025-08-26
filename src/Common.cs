@@ -22,10 +22,10 @@ namespace Sufficit.Asterisk
         /// <remarks>* \n for Unix defaults <see cref="Environment.NewLine"></see></remarks>
         public const string LINE_SEPARATOR = "\n";
 
-        public static Regex ASTERISK_VERSION = new Regex("^(?:Output: ){0,1}Asterisk\\s+\\D*([0-9]+\\.[0-9]+\\.[0-9]+|[1-9][0-9]-r[0-9]+|[0-9]+\\.[0-9]+-cert[0-9]).*$",
+        public static Regex ASTERISK_VERSION = new("^(?:Output: ){0,1}Asterisk\\s+\\D*([0-9]+\\.[0-9]+\\.[0-9]+|[1-9][0-9]-r[0-9]+|[0-9]+\\.[0-9]+-cert[0-9]).*$",
                           RegexOptions.Compiled | RegexOptions.IgnoreCase );
 
-        public static Regex SHOW_VERSION_FILES_PATTERN = new Regex("^([\\S]+)\\s+Revision: ([0-9\\.]+)");
+        public static Regex SHOW_VERSION_FILES_PATTERN = new("^([\\S]+)\\s+Revision: ([0-9\\.]+)");
         public static char[] RESPONSE_KEY_VALUE_SEPARATOR = {':'};
         public static char[] MINUS_SEPARATOR = {'-'};
         public static char INTERNAL_ACTION_ID_DELIMITER = '#';
@@ -47,6 +47,11 @@ namespace Sufficit.Asterisk
         public const string AGI_DEFAULT_RETURN_STATUS = "AGISTATUSMESSAGE";
 
         /// <summary>
+        /// Used for failsafe redirection when AGI script brakes on execution
+        /// </summary>
+        public const string AGI_DEFAULT_RETURN_DESTINATION = "AGIDESTINATION";
+
+        /// <summary>
         ///     Don't send HANGUP signal for AGI, must be setted before calls AGI by dialplan
         /// </summary>
         public const string AGI_SIGHUP = "AGISIGHUP";
@@ -64,22 +69,22 @@ namespace Sufficit.Asterisk
         public const int AGI_DEFAULT_MAX_DIGITS = 1024;
         public const int AGI_DEFAULT_TIMEOUT = 0;
 
-        public static Regex AGI_STATUS_PATTERN = new Regex("^(\\d{3})[ -]", RegexOptions.Compiled);
+        public static Regex AGI_STATUS_PATTERN = new("^(\\d{3})[ -]", RegexOptions.Compiled);
                
 
-        public static Regex AGI_RESULT_PATTERN = new Regex("^200 result= *(\\S+)", RegexOptions.Compiled);
-        public static Regex AGI_PARENTHESIS_PATTERN = new Regex("^200 result=\\S* +\\((.*)\\)", RegexOptions.Compiled);
+        public static Regex AGI_RESULT_PATTERN = new("^200 result= *(\\S+)", RegexOptions.Compiled);
+        public static Regex AGI_PARENTHESIS_PATTERN = new("^200 result=\\S* +\\((.*)\\)", RegexOptions.Compiled);
 
         /// <summary>
         /// Named Groups (code,result,value)
         /// </summary>
-        public static Regex AGI_PARENTHESIS_PATTERN_NAMED = new Regex(@"^(?<code>\d*) result=(?<result>\S*) +\((?<value>.*)\)", RegexOptions.Compiled);
+        public static Regex AGI_PARENTHESIS_PATTERN_NAMED = new(@"^(?<code>\d*) result=(?<result>\S*) +\((?<value>.*)\)", RegexOptions.Compiled);
 
-        public static Regex AGI_ADDITIONAL_ATTRIBUTES_PATTERN = new Regex("^200 result=\\S* +(\\(.*\\) )?(.+)$", RegexOptions.Compiled);
-        public static Regex AGI_ADDITIONAL_ATTRIBUTE_PATTERN = new Regex("(\\S+)=(\\S+)", RegexOptions.Compiled);
-        public static Regex AGI_SYNOPSIS_PATTERN = new Regex("^\\s*Usage:\\s*(.*)\\s*$", RegexOptions.Compiled);
-        public static Regex AGI_SCRIPT_PATTERN = new Regex("^([^\\?]*)\\?(.*)$");
-        public static Regex AGI_PARAMETER_PATTERN = new Regex("^(.*)=(.*)$");
+        public static Regex AGI_ADDITIONAL_ATTRIBUTES_PATTERN = new("^200 result=\\S* +(\\(.*\\) )?(.+)$", RegexOptions.Compiled);
+        public static Regex AGI_ADDITIONAL_ATTRIBUTE_PATTERN = new("(\\S+)=(\\S+)", RegexOptions.Compiled);
+        public static Regex AGI_SYNOPSIS_PATTERN = new("^\\s*Usage:\\s*(.*)\\s*$", RegexOptions.Compiled);
+        public static Regex AGI_SCRIPT_PATTERN = new("^([^\\?]*)\\?(.*)$");
+        public static Regex AGI_PARAMETER_PATTERN = new("^(.*)=(.*)$");
 
         #endregion
     }

@@ -6,6 +6,7 @@
 		<RootNamespace>Sufficit.Asterisk</RootNamespace>
 		<ImplicitUsings>false</ImplicitUsings>
 		<Configurations>Debug;Release;Packing</Configurations>
+		<NoWarn>CA2211</NoWarn>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Sufficit Versioning">
