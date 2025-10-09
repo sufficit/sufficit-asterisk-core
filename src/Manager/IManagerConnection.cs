@@ -37,6 +37,12 @@ namespace Sufficit.Asterisk.Manager
         event EventHandler<DisconnectEventArgs>? OnDisconnected;
 
         /// <summary>
+        /// Event triggered when there is a change in the event handlers of the connection.
+        /// Provides information about the current and previous event handler subscriptions.
+        /// </summary>
+        event EventHandler<EventHandlersChangedEventArgs>? OnEventHandlersChanged;
+
+        /// <summary>
         /// Gets the version of the Asterisk system.
         /// </summary>
         AsteriskVersion? AsteriskVersion { get; }

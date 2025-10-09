@@ -41,11 +41,5 @@ namespace Sufficit.Asterisk.Manager
         /// </summary>
         /// <param name="userEventClass">The type of the user event to register.</param>
         void RegisterUserEventClass(Type userEventClass);
-
-        /// <summary>
-        /// Gets or sets a value indicating whether all events should be fired, 
-        /// even if no specific handlers are registered.
-        /// </summary>
-        bool FireAllEvents { get; set; }
     }
 }
