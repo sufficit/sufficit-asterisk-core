@@ -8,9 +8,9 @@ namespace Sufficit.Asterisk.Manager.Events
     /// <seealso cref="Manager.Action.ZapShowChannelsAction" />
     public class ZapShowChannelsEvent : ResponseEvent
 	{
-		private string signalling;
-		private string context;
-		private string alarm;
+		private string signalling = string.Empty;
+		private string context = string.Empty;
+		private string alarm = string.Empty;
 
         /// <summary>
         /// Get/Set the signalling of this zap channel.<br/>

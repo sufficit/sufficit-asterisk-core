@@ -7,12 +7,12 @@ namespace Sufficit.Asterisk.Manager.Events
 	/// </summary>
 	public class UnparkedCallEvent : AbstractParkedCallEvent
 	{
-		private string from;
+		private string? from;
 
 		/// <summary>
 		/// Get/Set the name of the channel that parked the call.
 		/// </summary>
-		public string From
+		public string? From
 		{
 			get { return this.from; }
 			set { this.from = value; }

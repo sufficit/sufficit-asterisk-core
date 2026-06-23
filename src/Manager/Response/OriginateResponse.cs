@@ -4,14 +4,14 @@ namespace Sufficit.Asterisk.Manager.Response
 {
     public class OriginateResponse
     {
-        private string channel;
-        private string channelName;
+        private string channel = string.Empty;
+        private string channelName = string.Empty;
         private DateTime endTime = DateTime.MinValue;
         private int reason;
-        private string response;
+        private string response = string.Empty;
 
         private DateTime startTime;
-        private string uniqueId;
+        private string uniqueId = string.Empty;
 
         #region IsSuccess 
 

@@ -10,12 +10,12 @@ namespace Sufficit.Asterisk.Manager.Events
     /// <seealso cref="Manager.Action.ParkedCallsAction"/>
     public class ParkedCallEvent : ResponseEvent
 	{
-		private string exten;
-		private string from;
+		private string exten = string.Empty;
+		private string? from;
 		private long timeout;
-		private string callerId;
-		private string callerIdNum;
-		private string callerIdName;
+		private string callerId = string.Empty;
+		private string callerIdNum = string.Empty;
+		private string callerIdName = string.Empty;
 
 		/// <summary>Get/Set the extension the channel is parked at.</summary>
 		public string Exten
@@ -24,7 +24,7 @@ namespace Sufficit.Asterisk.Manager.Events
 			set { this.exten = value; }
 		}
 		/// <summary>Get/Set the name of the channel that parked the call.</summary>
-		public string From
+		public string? From
 		{
 			get { return from; }
 			set { this.from = value; }
