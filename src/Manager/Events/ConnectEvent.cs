@@ -13,6 +13,6 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Get/Set the version of the protocol.
         /// </summary>
-        public string ProtocolIdentifier { get; set; }
+        public string ProtocolIdentifier { get; set; } = string.Empty;
     }
 }

@@ -12,28 +12,28 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// <summary>
 		///     Gets or sets the state.
 		/// </summary>
-		public string State { get; set; }
+		public string State { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the class.<br/>
         ///     The class of music being played on the channel.
         /// </summary>
-        public string Class { get; set; }
+        public string Class { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the account code.
         /// </summary>
-        public string AccountCode { get; set; }
+        public string AccountCode { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the language.
         /// </summary>
-        public string Language { get; set; }
+        public string Language { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the Linked Id<br/>
         ///     UniqueId of the oldest channel associated with this channel.
         /// </summary>
-        public string LinkedId { get; set; }
+        public string LinkedId { get; set; } = string.Empty;
     }
 }

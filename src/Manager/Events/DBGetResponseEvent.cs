@@ -12,16 +12,16 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Get/Set the family of the database entry that was queried.
         /// </summary>
-        public string Family { get; set; }
+        public string Family { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the key of the database entry that was queried.
         /// </summary>
-        public string Key { get; set; }
+        public string Key { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the value of the database entry that was queried.
         /// </summary>
-        public string Val { get; set; }
+        public string Val { get; set; } = string.Empty;
     }
 }

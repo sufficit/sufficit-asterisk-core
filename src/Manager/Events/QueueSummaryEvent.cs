@@ -10,7 +10,7 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         /// Queue name
         /// </summary>
-        public string Queue { get; set; }
+        public string Queue { get; set; } = string.Empty;
 
         /// <summary>
         /// Logged operators count in queue

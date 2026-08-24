@@ -4,12 +4,12 @@ namespace Sufficit.Asterisk.Manager.Events
 {
     internal class MasqueradeEvent : ManagerEvent
     {
-        public string Clone { get; set; }
+        public string Clone { get; set; } = string.Empty;
 
-        public string CloneState { get; set; }
+        public string CloneState { get; set; } = string.Empty;
 
-        public string Original { get; set; }
+        public string Original { get; set; } = string.Empty;
 
-        public string OriginalState { get; set; }
+        public string OriginalState { get; set; } = string.Empty;
     }
 }

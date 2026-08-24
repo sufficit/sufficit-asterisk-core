@@ -4,8 +4,8 @@ namespace Sufficit.Asterisk.Manager.Events
 {
     public class MobileStatusEvent : ManagerEvent
     {
-        public string Status { get; set; }
+        public string Status { get; set; } = string.Empty;
 
-        public string Device { get; set; }
+        public string Device { get; set; } = string.Empty;
     }
 }

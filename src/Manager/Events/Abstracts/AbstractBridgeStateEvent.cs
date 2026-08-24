@@ -7,11 +7,11 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
 	/// </summary>
 	public abstract class AbstractBridgeStateEvent : ManagerEvent
 	{
-        public string BridgeUniqueId { get; set; }
-        public string BridgeType { get; set; }
-        public string BridgeTechnology { get; set; }
-        public string BridgeCreator { get; set; }
-        public string BridgeName { get; set; }
+        public string BridgeUniqueId { get; set; } = string.Empty;
+        public string BridgeType { get; set; } = string.Empty;
+        public string BridgeTechnology { get; set; } = string.Empty;
+        public string BridgeCreator { get; set; } = string.Empty;
+        public string BridgeName { get; set; } = string.Empty;
         public int BridgeNumChannels { get; set; }
 	}
 }

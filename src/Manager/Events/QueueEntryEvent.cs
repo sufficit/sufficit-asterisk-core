@@ -12,7 +12,7 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// <summary>
 		/// Get/Set the name of the queue that contains this entry.
 		/// </summary>
-		public string Queue { get; set; }
+		public string Queue { get; set; } = string.Empty;
 
 		/// <summary>
 		/// Get/Set the position of this entry in the queue.
@@ -22,12 +22,12 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// <summary>
 		/// Get/Set the the Caller*ID number of this entry.
 		/// </summary>
-		public string CallerId { get; set; }
+		public string CallerId { get; set; } = string.Empty;
 
 		/// <summary>
 		/// Get/Set the Caller*ID name of this entry.
 		/// </summary>
-		public string CallerIdName { get; set; }
+		public string CallerIdName { get; set; } = string.Empty;
 
 		/// <summary>
 		/// Get/Set the number of seconds this entry has spent in the queue.

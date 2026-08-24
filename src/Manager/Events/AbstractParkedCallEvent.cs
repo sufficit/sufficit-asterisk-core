@@ -10,21 +10,21 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Get/Set the extension the channel is or was parked at.
         /// </summary>
-        public string Exten { get; set; }
+        public string Exten { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the Caller*ID number of the parked channel.
         /// </summary>
-        public string CallerId { get; set; }
+        public string CallerId { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the Caller*ID number of the parked channel.
         /// </summary>
-        public string CallerIdNum { get; set; }
+        public string CallerIdNum { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the Caller*ID name of the parked channel.
         /// </summary>
-        public string CallerIdName { get; set; }
+        public string CallerIdName { get; set; } = string.Empty;
     }
 }

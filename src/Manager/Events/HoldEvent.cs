@@ -10,6 +10,6 @@ namespace Sufficit.Asterisk.Manager.Events
     /// <seealso cref="Manager.Event.UnholdEvent" />
     public class HoldEvent : AbstractChannelInfoEvent
     {
-        public string Status { get; set; }
+        public string Status { get; set; } = string.Empty;
     }
 }

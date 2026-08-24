@@ -12,8 +12,8 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Get/Set the name of the agent that logged off.
         /// </summary>
-        public string Agent { get; set; }
+        public string Agent { get; set; } = string.Empty;
 
-        public string LoginTime { get; set; }
+        public string LoginTime { get; set; } = string.Empty;
     }
 }

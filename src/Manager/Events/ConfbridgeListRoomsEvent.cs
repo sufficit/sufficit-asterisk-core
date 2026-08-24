@@ -25,6 +25,6 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Gets or sets the locked.
         /// </summary>
-        public string Locked { get; set; }
+        public string Locked { get; set; } = string.Empty;
     }
 }

@@ -11,11 +11,11 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         /// 
         /// </summary>
-        public string CallerIDnum { get; set; }
+        public string CallerIDnum { get; set; } = string.Empty;
 
         /// <summary>
         /// 
         /// </summary>
-        public string CallerIDname { get; set; }
+        public string CallerIDname { get; set; } = string.Empty;
     }
 }

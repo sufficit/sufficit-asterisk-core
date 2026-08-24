@@ -14,19 +14,19 @@ namespace Sufficit.Asterisk.Manager.Events
 
         /// <summary> Returns the name of the agent that logged off.</summary>
         /// <summary> Sets the name of the agent that logged off.</summary>
-        public string Agent { get; set; }
+        public string Agent { get; set; } = string.Empty;
 
         #endregion
 
         #region LoginChan
 
-        public string LoginChan { get; set; }
+        public string LoginChan { get; set; } = string.Empty;
 
         #endregion
 
         #region LoginTime
 
-        public string LoginTime { get; set; }
+        public string LoginTime { get; set; } = string.Empty;
 
         #endregion
 
@@ -38,7 +38,7 @@ namespace Sufficit.Asterisk.Manager.Events
         ///     autologoff to the appropriate number of seconds in agents.conf.
         /// </summary>
         /// <summary>Sets the reason for the logoff.</summary>
-        public string Reason { get; set; }
+        public string Reason { get; set; } = string.Empty;
 
         #endregion
     }

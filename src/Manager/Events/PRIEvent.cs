@@ -5,10 +5,10 @@ namespace Sufficit.Asterisk.Manager.Events
 {
 	public class PRIEvent : ManagerEvent
 	{
-		private string priEvent;
-		private string priEventCode;
-		private string dChannel;
-		private string span;
+		private string priEvent = string.Empty;
+		private string priEventCode = string.Empty;
+		private string dChannel = string.Empty;
+		private string span = string.Empty;
 
 		public string PriEvent
 		{

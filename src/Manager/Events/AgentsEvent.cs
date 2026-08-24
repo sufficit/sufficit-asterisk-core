@@ -12,12 +12,12 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Get/Set the agentid.
         /// </summary>
-        public string Agent { get; set; }
+        public string Agent { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the name of this agent.
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the status of this agent.<br />
@@ -33,31 +33,31 @@ namespace Sufficit.Asterisk.Manager.Events
         ///         <dd>Don't know anything about agent. Shouldn't ever get this.</dd>
         ///     </dl>
         /// </summary>
-        public string Status { get; set; }
+        public string Status { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the name of channel this agent logged in from or "n/a" if the agent is not logged in.<br />
         ///     Removed on Asterisk 12 app_agent_pool.so module. Use Channel instead.
         /// </summary>
-        public string LoggedInChan { get; set; }
+        public string LoggedInChan { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the numerical Caller*ID of the channel this agent is talking toor "n/a" if this agent is talking to nobody.<br />
         ///     Removed on Asterisk 12 app_agent_pool.so module. Use TalkingToChan instead.
         /// </summary>
-        public string TalkingTo { get; set; }
+        public string TalkingTo { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set BRIDGEPEER value on agent channel.<br />
         ///     Present if Status value is AGENT_ONCALL.
         /// </summary>
-        public string TalkingToChan { get; set; }
+        public string TalkingToChan { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set Epoche time when the agent started talking with the caller.<br />
         ///     Present if Status value is AGENT_ONCALL.
         /// </summary>
-        public string CallStarted { get; set; }
+        public string CallStarted { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the time (in seconds since 01/01/1970).<br />
@@ -87,42 +87,42 @@ namespace Sufficit.Asterisk.Manager.Events
         ///         <dt>Unknown</dt>
         ///     </dl>
         /// </summary>
-        public string ChannelStateDesc { get; set; }
+        public string ChannelStateDesc { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the callerID number.
         /// </summary>
-        public string CallerIDNum { get; set; }
+        public string CallerIDNum { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the callerID name.
         /// </summary>
-        public string CallerIDName { get; set; }
+        public string CallerIDName { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the connected line number.
         /// </summary>
-        public string ConnectedLineNum { get; set; }
+        public string ConnectedLineNum { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the connected line name.
         /// </summary>
-        public string ConnectedLineName { get; set; }
+        public string ConnectedLineName { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the account codee.
         /// </summary>
-        public string AccountCode { get; set; }
+        public string AccountCode { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the context.
         /// </summary>
-        public string Context { get; set; }
+        public string Context { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the extension.
         /// </summary>
-        public string Exten { get; set; }
+        public string Exten { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the agent priority.

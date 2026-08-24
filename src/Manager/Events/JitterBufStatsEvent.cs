@@ -4,7 +4,7 @@ namespace Sufficit.Asterisk.Manager.Events
 {
     public class JitterBufStatsEvent : ManagerEvent
     {
-        public string Owner { get; set; }
+        public string Owner { get; set; } = string.Empty;
 
         public int Ping { get; set; }
 

@@ -9,7 +9,7 @@ namespace Sufficit.Asterisk.Manager.Events
     /// <seealso cref="QueueStatusAction" />
     public class QueueStatusCompleteEvent : ResponseEvent, IActionListComplete
 	{
-		public string EventList { get; set; }
+		public string EventList { get; set; } = string.Empty;
 
 		public uint ListItems { get; set; }
 	}

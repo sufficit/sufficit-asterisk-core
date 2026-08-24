@@ -11,7 +11,7 @@ namespace Sufficit.Asterisk.Manager.Events
         ///     Get/Set the conference number.
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string Meetme { get; set; }
+        public string Meetme { get; set; } = string.Empty;
         /// <summary>
         ///     Get/Set the conference user number
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.

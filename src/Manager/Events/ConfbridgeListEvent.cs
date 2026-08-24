@@ -15,107 +15,107 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Identifies this user as an admin user.
         /// </summary>
-        public string Admin { get; set; }
+        public string Admin { get; set; } = string.Empty;
 
         /// <summary>
         ///     Identifies this user as a marked user.
         /// </summary>
-        public string MarkedUser { get; set; }
+        public string MarkedUser { get; set; } = string.Empty;
 
         /// <summary>
         ///     Must this user wait for a marked user to join?
         /// </summary>
-        public string WaitMarked { get; set; }
+        public string WaitMarked { get; set; } = string.Empty;
 
         /// <summary>
         ///     Does this user get kicked after the last marked user leaves?
         /// </summary>
-        public string EndMarked { get; set; }
+        public string EndMarked { get; set; } = string.Empty;
 
         /// <summary>
         ///     Is this user waiting for a marked user to join?
         /// </summary>
-        public string Waiting { get; set; }
+        public string Waiting { get; set; } = string.Empty;
 
         /// <summary>
         ///     The current mute status.
         /// </summary>
-        public string Muted { get; set; }
+        public string Muted { get; set; } = string.Empty;
 
         /// <summary>
         ///     Is this user talking?
         /// </summary>
-        public string Talking { get; set; }
+        public string Talking { get; set; } = string.Empty;
 
         /// <summary>
         ///     The number of seconds the channel has been up.
         /// </summary>
-        public string AnsweredTime { get; set; }
+        public string AnsweredTime { get; set; } = string.Empty;
         
         /// <summary>
         ///     A numeric code for the channel's current state, related to ChannelStateDesc
         /// </summary>
-        public string ChannelState { get; set; }
+        public string ChannelState { get; set; } = string.Empty;
 
         /// <summary>
         ///     The number of seconds the channel has been up.
         /// </summary>
-        public string ChannelStateDesc { get; set; }
+        public string ChannelStateDesc { get; set; } = string.Empty;
         
         /// <summary>
         ///     Gets or sets the Caller*ID number.
         /// </summary>
-        public string CallerIDNum { get; set; }
+        public string CallerIDNum { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the Caller*ID name.
         /// </summary>
-        public string CallerIDName { get; set; }
+        public string CallerIDName { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the connected line number.
         /// </summary>
-        public string ConnectedLineNum { get; set; }
+        public string ConnectedLineNum { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the name of the connected line.
         /// </summary>
-        public string ConnectedLineName { get; set; }
+        public string ConnectedLineName { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the language.
         /// </summary>
-        public string Language { get; set; }
+        public string Language { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the account code.
         /// </summary>
-        public string AccountCode { get; set; }
+        public string AccountCode { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the context.
         /// </summary>
-        public string Context { get; set; }
+        public string Context { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the exten.
         /// </summary>
-        public string Exten { get; set; }
+        public string Exten { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the priority.
         /// </summary>
-        public string Priority { get; set; }
+        public string Priority { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the Uniqueid.
         /// </summary>
-        public string Uniqueid { get; set; }
+        public string Uniqueid { get; set; } = string.Empty;
 
         /// <summary>
         ///     Gets or sets the Linkedid.
         ///     Uniqueid of the oldest channel associated with this channel.
         /// </summary>
-        public string Linkedid { get; set; }
+        public string Linkedid { get; set; } = string.Empty;
     }
 }

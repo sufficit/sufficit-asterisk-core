@@ -20,6 +20,6 @@ namespace Sufficit.Asterisk.Manager.Events
         ///         <li>Not Open</li>
         ///     </ul>
         /// </summary>
-        public string Alarm { get; set; }
+        public string Alarm { get; set; } = string.Empty;
     }
 }

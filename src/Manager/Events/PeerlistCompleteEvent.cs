@@ -16,6 +16,6 @@ namespace Sufficit.Asterisk.Manager.Events
 		/// Get/Set the number of PeerEvents that have been reported.</summary>
 		public uint ListItems { get; set; }
 
-		public string EventList { get; set; }
+		public string EventList { get; set; } = string.Empty;
 	}
 }

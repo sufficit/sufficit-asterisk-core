@@ -10,7 +10,7 @@ namespace Sufficit.Asterisk.Manager.Events
     public class NewCallerIdEvent : AbstractChannelInfoEvent
     {
         private int cidCallingPres;
-        private string cidCallingPresTxt;
+        private string cidCallingPresTxt = string.Empty;
 
         /// <summary>
         ///     Get the CallerId presentation/screening.

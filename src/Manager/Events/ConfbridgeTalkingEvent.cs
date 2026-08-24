@@ -11,6 +11,6 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         /// 
         /// </summary>
-        public string TalkingStatus { get; set; }
+        public string TalkingStatus { get; set; } = string.Empty;
     }
 }

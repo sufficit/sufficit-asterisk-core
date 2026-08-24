@@ -10,23 +10,23 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
         /// <summary>
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string BridgeUniqueId { get; set; }
+        public string BridgeUniqueId { get; set; } = string.Empty;
         /// <summary>
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string BridgeType { get; set; }
+        public string BridgeType { get; set; } = string.Empty;
         /// <summary>
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string BridgeTechnology { get; set; }
+        public string BridgeTechnology { get; set; } = string.Empty;
         /// <summary>
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string BridgeCreator { get; set; }
+        public string BridgeCreator { get; set; } = string.Empty;
         /// <summary>
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string BridgeName { get; set; }
+        public string BridgeName { get; set; } = string.Empty;
 
         /// <summary>
         /// <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
@@ -34,6 +34,6 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
         public int BridgeNumChannels { get; set; }   
 
 
-        public string BridgeVideoSourceMode { get; set; }
+        public string BridgeVideoSourceMode { get; set; } = string.Empty;
     }
 }

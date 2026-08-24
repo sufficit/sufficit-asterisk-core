@@ -13,6 +13,6 @@ namespace Sufficit.Asterisk.Manager.Events
 
 		public uint LastReload { get; set; }
 
-		public string Status { get; set; }
+		public string Status { get; set; } = string.Empty;
 	}
 }

@@ -6,8 +6,8 @@ namespace Sufficit.Asterisk.Manager.Events
     /// </summary>
     public class MeetmeJoinEvent : AbstractMeetmeEvent
     {
-        public string CallerIdNum { get; set; }
+        public string CallerIdNum { get; set; } = string.Empty;
 
-        public string CallerIdName { get; set; }
+        public string CallerIdName { get; set; } = string.Empty;
     }
 }

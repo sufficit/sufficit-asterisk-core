@@ -8,15 +8,15 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
 {	
 	public abstract class AbstractAgentVariables : ManagerEvent
 	{
-		private NameValueCollection variables;
+		private NameValueCollection variables = new();
 
-		public string Channel { get; set; } 
+		public string Channel { get; set; } = string.Empty;
 
-		public string Server { get; set; }
+		public string Server { get; set; } = string.Empty;
 
 		public double Timestamp { get; set; }
 
-		public string UniqueId { get; set; }
+		public string UniqueId { get; set; } = string.Empty;
 
 		#region Variable
 
@@ -72,7 +72,7 @@ namespace Sufficit.Asterisk.Manager.Events.Abstracts
 		{
 			if (variables == null)
 				return string.Empty;
-			return variables[key];
+			return variables[key] ?? string.Empty;
 		}
 		#endregion
 	}

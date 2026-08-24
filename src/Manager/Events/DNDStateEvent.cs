@@ -13,11 +13,11 @@ namespace Sufficit.Asterisk.Manager.Events
         /// <summary>
         ///     Get/Set DND state of the channel. "enabled" if do not disturb is on, "disabled" if it is off.
         /// </summary>
-        public string State { get; set; }
+        public string State { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set DND state of the channel. "enabled" if do not disturb is on, "disabled" if it is off.
         /// </summary>
-        public string Status { get; set; }
+        public string Status { get; set; } = string.Empty;
     }
 }

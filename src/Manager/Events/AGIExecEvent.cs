@@ -17,16 +17,16 @@ namespace Sufficit.Asterisk.Manager.Events
         ///     Get/Set the command
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string Command { get; set; }
+        public string Command { get; set; } = string.Empty;
         /// <summary>
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string SubEvent { get; set; }
+        public string SubEvent { get; set; } = string.Empty;
         /// <summary>
         ///     Get/Set the result
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string Result { get; set; }
+        public string Result { get; set; } = string.Empty;
         /// <summary>
         ///     Get/Set the result number
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.

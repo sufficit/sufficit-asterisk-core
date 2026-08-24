@@ -15,13 +15,13 @@ namespace Sufficit.Asterisk.Manager.Events
         ///     Get/Set the identifier of the remote fax station.
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string RemoteStationId { get; set; }
+        public string RemoteStationId { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the identifier of the local fax station.
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string LocalStationId { get; set; }
+        public string LocalStationId { get; set; } = string.Empty;
 
         /// <summary>
         ///     Get/Set the number of pages transferred.
@@ -45,6 +45,6 @@ namespace Sufficit.Asterisk.Manager.Events
         ///     Get/Set the filename of the received fax including its full path on the Asterisk server.
         ///     <b>Available since : </b> <see href="https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+Documentation" target="_blank" alt="Asterisk 12 wiki docs">Asterisk 12</see>.
         /// </summary>
-        public string Filename { get; set; }
+        public string Filename { get; set; } = string.Empty;
     }
 }
