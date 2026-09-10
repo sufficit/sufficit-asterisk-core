@@ -13,6 +13,12 @@ namespace Sufficit.Asterisk.IO
         /// </summary>
         public const string SECTIONNAME = "FastAGISocket";
 
+        /// <summary>Maximum queued lines; zero preserves legacy unbounded behavior.</summary>
+        public int ReceiveLineCapacity { get; set; }
+
+        /// <summary>Maximum decoded characters per line; zero preserves legacy behavior.</summary>
+        public int ReceiveMaxLineChars { get; set; }
+
         /// <summary>
         ///     Total bytes for buffer size. <br />
         ///     Its important to avoid split of received and send messages <br />

@@ -78,6 +78,22 @@ namespace Sufficit.Asterisk.Manager
         /// </summary>
         public bool ForceIPv4 { get; set; } = false;
 
+        /// <summary>Opt-in receive limits. Set all four; zero for all preserves legacy behavior.</summary>
+        public int ReceivePacketCapacity { get; set; }
+        public int ReceiveLineCapacity { get; set; }
+        public int ReceiveMaxLineChars { get; set; }
+        public int ReceiveMaxPacketChars { get; set; }
+
+        public void ValidateReceiveLimits()
+        {
+            if (ReceivePacketCapacity == 0 && ReceiveLineCapacity == 0 && ReceiveMaxLineChars == 0 && ReceiveMaxPacketChars == 0) return;
+            if (ReceivePacketCapacity < 1 || ReceivePacketCapacity > 65536 ||
+                ReceiveLineCapacity < 1 || ReceiveLineCapacity > 65536 ||
+                ReceiveMaxLineChars < 64 || ReceiveMaxLineChars > 1048576 ||
+                ReceiveMaxPacketChars < ReceiveMaxLineChars || ReceiveMaxPacketChars > 4194304)
+                throw new System.ArgumentOutOfRangeException(nameof(ReceivePacketCapacity), "All receive limits must be valid and configured together.");
+        }
+
         public override bool Equals (object? obj)
             => obj is ManagerConnectionParameters other &&
             other.Address == Address &&
@@ -89,10 +105,14 @@ namespace Sufficit.Asterisk.Manager
             other.PingInterval == PingInterval &&
             other.OldVersion == OldVersion &&
             other.ForceIPv4 == ForceIPv4 &&
+            other.ReceivePacketCapacity == ReceivePacketCapacity &&
+            other.ReceiveLineCapacity == ReceiveLineCapacity &&
+            other.ReceiveMaxLineChars == ReceiveMaxLineChars &&
+            other.ReceiveMaxPacketChars == ReceiveMaxPacketChars &&
             base.Equals(obj);
 
         public override int GetHashCode()
-            => (Address, Port, Username, Password, UseMD5Authentication, SocketEncoding, PingInterval, OldVersion, ForceIPv4).GetHashCode() ^ base.GetHashCode();
+            => (Address, Port, Username, Password, UseMD5Authentication, SocketEncoding, PingInterval, OldVersion, ForceIPv4).GetHashCode()
+                ^ (ReceivePacketCapacity, ReceiveLineCapacity, ReceiveMaxLineChars, ReceiveMaxPacketChars).GetHashCode() ^ base.GetHashCode();
     }
 }
-
