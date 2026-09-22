@@ -46,6 +46,10 @@ jobs:
       NUPKGS_DIR: ${{ github.workspace }}/src/nupkgs
       LEGACY_DOTNET_SDK_VERSION: 2.2.402
     
+    # OIDC: a troca de token do Trusted Publishing exige id-token: write.
+    permissions:
+      contents: read
+      id-token: write
     steps:
     - name: Checkout repository
       uses: actions/checkout@v5
@@ -84,9 +88,14 @@ jobs:
       working-directory: ${{ env.SRC_DIR }}
       run: dotnet pack --configuration Packing --output ${{ env.NUPKGS_DIR }}
     
+    - name: Authenticate with NuGet using GitHub OIDC
+      id: login
+      uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1
+      with:
+        user: ${{ vars.NUGET_USER }}
     - name: Publish to Nuget.Org
       working-directory: ${{ env.SRC_DIR }}
-      run: dotnet nuget push --skip-duplicate ${{ env.NUPKGS_DIR }}/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
+      run: dotnet nuget push --skip-duplicate ${{ env.NUPKGS_DIR }}/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{steps.login.outputs.NUGET_API_KEY}}
       
     # GitHub Packages disabled - only NuGet.org is used
     # - name: Publish to GitHub
